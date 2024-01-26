@@ -22,10 +22,10 @@ imageContainer.addEventListener('touchmove', (event) => {
       event.touches[0].clientY - event.touches[1].clientY
     );
     const pinchDelta = currentPinchDistance - initialPinchDistance;
-    currentScale = initialScale + pinchDelta * 0.01; // Adjust the scaling factor as needed
+    currentScale = initialScale + pinchDelta * 0.01; 
 
     if (currentScale < 1) {
-      currentScale = 1; // Prevent scaling below 100%
+      currentScale = 1; 
     }
 
     zoomImage.style.transform = `scale(${currentScale})`;
