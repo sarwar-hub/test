@@ -1,33 +1,40 @@
-let initialPinchDistance = 0;
-let initialScale = 1;
-let currentScale = 1;
 
-const zoomImage = document.getElementById('zoomImage');
-const imageContainer = document.getElementById('imageContainer');
+// tags slider open
 
-imageContainer.addEventListener('touchstart', (event) => {
-  if (event.touches.length === 2) {
-    initialPinchDistance = Math.hypot(
-      event.touches[0].clientX - event.touches[1].clientX,
-      event.touches[0].clientY - event.touches[1].clientY
-    );
-    initialScale = currentScale;
-  }
-});
+const tagsBox = document.querySelector(".bppm-tags-slider-wrapper .tags-box"),
+        allTags = tagsBox.querySelectorAll(".bppm-tags-slider-wrapper .tag"),
+        arrowIconsTag = document.querySelectorAll(".bppm-tags-slider-wrapper .icon i");
 
-imageContainer.addEventListener('touchmove', (event) => {
-  if (event.touches.length === 2) {
-    const currentPinchDistance = Math.hypot(
-      event.touches[0].clientX - event.touches[1].clientX,
-      event.touches[0].clientY - event.touches[1].clientY
-    );
-    const pinchDelta = currentPinchDistance - initialPinchDistance;
-    currentScale = initialScale + pinchDelta * 0.01; // Adjust the scaling factor as needed
+    let isDragging = false;
 
-    if (currentScale < 1) {
-      currentScale = 1; // Prevent scaling below 100%
+    const handleIconsTag = (scrollVal) => {
+        let maxScrollableWidth = tagsBox.scrollWidth - tagsBox.clientWidth;
+        arrowIconsTag[0].parentElement.style.display = scrollVal <= 0 ? "none" : "flex";
+        arrowIconsTag[1].parentElement.style.display = maxScrollableWidth - scrollVal <= 1 ? "none" : "flex";
     }
 
-    zoomImage.style.transform = `scale(${currentScale})`;
-  }
-});
+    arrowIconsTag.forEach(icon => {
+        icon.addEventListener("click", () => {
+            // if clicked icon is left, reduce 350 from tagsBox scrollLeft else add
+            let scrollWidth = tagsBox.scrollLeft += icon.id === "left" ? -340 : 340;
+            handleIconsTag(scrollWidth);
+        });
+    });
+
+    const dragging = (e) => {
+        if (!isDragging) return;
+        tagsBox.classList.add("dragging");
+        tagsBox.scrollLeft -= e.movementX;
+        handleIconsTag(tagsBox.scrollLeft)
+    }
+
+    const dragStop = () => {
+        isDragging = false;
+        tagsBox.classList.remove("dragging");
+    }
+
+    tagsBox.addEventListener("mousedown", () => isDragging = true);
+    tagsBox.addEventListener("mousemove", dragging);
+    document.addEventListener("mouseup", dragStop);
+
+// tags slider closed
