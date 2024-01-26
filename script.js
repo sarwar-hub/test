@@ -37,4 +37,6 @@ const tagsBox = document.querySelector(".bppm-tags-slider-wrapper .tags-box"),
     tagsBox.addEventListener("mousemove", dragging);
     document.addEventListener("mouseup", dragStop);
 
+
 // tags slider closed
+
