@@ -8,7 +8,11 @@
     overflow: hidden; /* Hide overflow to clip zoomed image */
     width: 100%; /* Adjust width as needed */
     height: 100vh; /* Adjust height as needed */
-    position: relative; /* Required for absolute positioning of image */
+    position: fixed; /* Required for absolute positioning of image */
+    top: 0;
+    left: 0;
+    width: 100;
+    height: auto;
   }
   
   #zoomImage {
