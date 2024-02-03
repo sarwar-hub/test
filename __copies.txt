@@ -1,0 +1,1 @@
+<div class="bppm-item-tags"><?php foreach($tagsArray as $tag_item){echo "<span>" . $tag_item . "</span>";} ?></div>

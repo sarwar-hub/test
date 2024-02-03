@@ -10,7 +10,7 @@
 
     
     <style>
-        /* Swiper styles */
+        /* listing slider open */
         .swiper {
             width: 100%;
             height: 100%;
@@ -57,22 +57,20 @@
         }
 
 
-
-        /* archive item */
         .bppm-slider-archive-item .bppm-item-text {
             padding: 10px;
         }
+
+        /* listing slider close */
     </style>
 </head>
 
 <body>
     <!-- Swiper -->
     <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <!-- archive items -->
-            <div class="swiper-slide">
-                <!-- archive item -->
-                <div class="bppm-slider-archive-item">
+        <div class="swiper-wrapper"> <!-- items container -->
+            <div class="swiper-slide"> <!-- repeatable item -->
+                <div class="bppm-slider-archive-item"> <!-- archive item -->
                     <img class="bppm-item-thumb"
                         src="https://images.unsplash.com/photo-1697162103256-dad37889d979?q=80&w=1891&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="">
@@ -81,60 +79,8 @@
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo vel ea voluptates amet
                             commodi ipsam corrupti earum. Minus, adipisci debitis?</p>
                     </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <!-- archive item -->
-                <div class="bppm-slider-archive-item">
-                    <img class="bppm-item-thumb"
-                        src="https://images.unsplash.com/photo-1697162103256-dad37889d979?q=80&w=1891&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="">
-                    <div class="bppm-item-text">
-                        <h3>Bipper Swipable bedroom</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo vel ea voluptates amet
-                            commodi ipsam corrupti earum. Minus, adipisci debitis?</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <!-- archive item -->
-                <div class="bppm-slider-archive-item">
-                    <img class="bppm-item-thumb"
-                        src="https://images.unsplash.com/photo-1697162103256-dad37889d979?q=80&w=1891&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="">
-                    <div class="bppm-item-text">
-                        <h3>Bipper Swipable bedroom</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo vel ea voluptates amet
-                            commodi ipsam corrupti earum. Minus, adipisci debitis?</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <!-- archive item -->
-                <div class="bppm-slider-archive-item">
-                    <img class="bppm-item-thumb"
-                        src="https://images.unsplash.com/photo-1697162103256-dad37889d979?q=80&w=1891&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="">
-                    <div class="bppm-item-text">
-                        <h3>Bipper Swipable bedroom</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo vel ea voluptates amet
-                            commodi ipsam corrupti earum. Minus, adipisci debitis?</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <!-- archive item -->
-                <div class="bppm-slider-archive-item">
-                    <img class="bppm-item-thumb"
-                        src="https://images.unsplash.com/photo-1697162103256-dad37889d979?q=80&w=1891&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="">
-                    <div class="bppm-item-text">
-                        <h3>Bipper Swipable bedroom</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo vel ea voluptates amet
-                            commodi ipsam corrupti earum. Minus, adipisci debitis?</p>
-                    </div>
-                </div>
-            </div>
+                </div> <!-- archive item -->
+            </div> <!-- repeatable item -->
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -221,7 +167,7 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Initialize Swiper -->
+    <!-- Initialize slider -->
     <script>
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
