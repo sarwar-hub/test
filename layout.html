@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive template</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        box-sizing: border-box;
+    }
+    /* no need these for production */
+
+
+    .bppm-arch-container {
+        height: 100vh;
+        max-width: 1300px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 250px auto 180px;
+        
+    }
+    .bppm-sidebar-left {
+        background: tomato;
+    }
+    .bppm-main-content {
+        background: gray;
+    }
+    .bppm-sidebar-right {
+        background: palegreen;
+    }
+
+    @media screen and (max-width: 1320px) {
+        .bppm-arch-container {
+        max-width: 95%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: auto 180px; 
+        }
+        .bppm-sidebar-left {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .bppm-arch-container {
+        max-width: 95%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: auto 180px; 
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .bppm-arch-container {
+        max-width: 95%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr; 
+        }
+        .bppm-sidebar-right {
+            display: none;
+        }
+    }
+</style>
+<body>
+    
+<div class="bppm-arch-layout">
+    <div class="bppm-arch-container">
+        <div class="bppm-sidebar-left">left sidebar</div>
+        <div class="bppm-main-content">
+            main content
+        </div>
+        <div class="bppm-sidebar-right">right sidebar</div>
+    </div>
+</div>
+
+</body>
+</html>
