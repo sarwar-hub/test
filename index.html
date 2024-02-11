@@ -1,147 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TABS</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
+    <title>Swipeable Tabs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/css/swiper.min.css'>
+
     <style>
-        .bppm-single-page-tab-wrapper .nav-tabs {
-            border-bottom: 1px solid #2aa2dd;
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
         }
 
-        .bppm-single-page-tab-wrapper .nav-tabs .nav-link {
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            background: #fff;
+            color: #333;
+            font-size: 1.8rem;
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+        }
+
+        .swiper-container-horizontal>.swiper-pagination {
+            top: 0;
+            bottom: auto;
+        }
+
+        .swiper-container-horizontal>.swiper-pagination .swiper-pagination-bullet {
+            margin: 0;
+        }
+
+        .active-mark {
+            background: #bdbdbd;
+            width: 25%;
+            height: 4px;
+            position: absolute;
+            left: 0;
+            top: 52px;
+            transition: left 0.2s ease-out;
+        }
+
+        .swiper-pagination-bullet {
+            background-color: #ffffff;
+            border-radius: 0;
+            box-sizing: border-box;
+            color: #333333;
+            cursor: pointer;
+            font-size: 1.6rem;
+            font-weight: 500;
+            opacity: 1;
+            height: 56px;
+            width: 25%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            transition: font-weight 0.2s ease;
+        }
+        .swiper-wrapper {
+            margin-top: 50px;
+        }
+
+        .swiper-pagination-bullet:nth-of-type(1).swiper-pagination-bullet-active~.active-mark {
+            left: 0%;
+        }
+
+        .swiper-pagination-bullet:nth-of-type(2).swiper-pagination-bullet-active~.active-mark {
+            left: 25%;
+        }
+
+        .swiper-pagination-bullet:nth-of-type(3).swiper-pagination-bullet-active~.active-mark {
+            left: 50%;
+        }
+        
+        .swiper-pagination-bullet:nth-of-type(4).swiper-pagination-bullet-active~.active-mark {
+            left: 75%;
+        }
+
+        .swiper-pagination-bullet:first-of-type.swiper-pagination-bullet-active~.active-mark {
+            left: 0;
+        }
+
+        .swiper-pagination-bullet-active {
             color: #2aa2dd;
-            font-weight: bold;
-        }
-
-        .bppm-single-page-tab-wrapper .nav-tabs .nav-link.active {
-            color: #495057;
-            background-color: #f1f1f1;
-            border-color: #2aa2dd #2aa2dd #fff;
-        }
-
-        .bppm-single-page-tab-wrapper .tab-content {
-            margin: 50px 0;
         }
     </style>
+
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
 </head>
 
-<body style="max-width: 1200px; margin: auto; padding: 10px;">
-
-    <div class="bppm-single-page-tab-wrapper"> <!-- tab wrapper open -->
-
-        <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <button class="nav-link active" id="nav-overview-tab" data-bs-toggle="tab"
-                    data-bs-target="#nav-overview" type="button" role="tab" aria-controls="nav-overview"
-                    aria-selected="true">Overview
-                </button>
-                <button class="nav-link" id="nav-reviews-tab" data-bs-toggle="tab" data-bs-target="#nav-reviews"
-                    type="button" role="tab" aria-controls="nav-reviews" aria-selected="false">Reviews
-                </button>
-                <button class="nav-link" id="nav-photos-tab" data-bs-toggle="tab" data-bs-target="#nav-photos"
-                    type="button" role="tab" aria-controls="nav-photos" aria-selected="false">Photos
-                </button>
-                <button class="nav-link" id="nav-features-tab" data-bs-toggle="tab" data-bs-target="#nav-features"
-                    type="button" role="tab" aria-controls="nav-features" aria-selected="false">Features
-                </button>
-            </div>
-        </nav>
-
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab">
-
-
-                <!-- overview -->
-                <div class="single-padded-element">
-                    <div style="margin-bottom: 20px;"></div>
-                    <h2 style="margin-top: 50px;"><b>[gd_post_meta key="name" show="value-strip" no_wrap="1"
-                            font_size="0"] in [gd_post_meta key="city" show="value-strip" no_wrap="1" font_size="0"],
-                            [gd_post_meta key="region" show="value-strip" no_wrap="1" font_size="0"]</b></h2>
-                </div>
-                <div style="margin-top: 7px;"></div>
-                <div class="bppr-map-and-info-wrapper">
-                    <div class="bppr-map-container">
-                        [gd_map map_type="auto" post_settings="1" width="100%" height="350px" maptype="ROADMAP"
-                        zoom="0"]
-                        <div class="single-padded-element">
-                            [gd_post_meta key="name" show="value-strip" no_wrap="1" font_size="0"]
-                            [gd_post_meta key="address" show="value" font_size="0"]
-                            [gd_post_directions bg_color="#0073aa" txt_color="#ffffff"]
-                        </div>
-                    </div>
-                    <div class="bppr-hours-container single-padded-element">[gd_post_meta title="Business Hours"
-                        key="business_hours" font_size="0"]</div>
-                    <div class="bppr-direction-container single-padded-element">
-                        [gd_output_location title="Contact Details" location="detail" list_style="list"]</div>
-                </div>
-                <!-- overview -->
-
-
-            </div>
-            <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab">
-
-
-                <!-- reviews -->
-                <div class="single-padded-element">
-                    <h2><b>Ratings and reviews for [gd_post_meta key="name" show="value-strip" no_wrap="1"
-                            font_size="0"]</b></h2>
-                    <div class="ratting-and-ratting-count">[gd_post_rating size="0" border_type="border"]</div>
-                    [gd_post_meta key="review_details" show="value" font_size="0"]
-                    [sg_google_reviews]
-                    <div style="margin: 100px 0;"></div>
-                </div>
-                <!-- reviews -->
-
-
-            </div>
-            <div class="tab-pane fade" id="nav-photos" role="tabpanel" aria-labelledby="nav-photos-tab">
-
-
-                <!-- photos -->
-                all photos will be here
-                <!-- photos -->
-
-
-            </div>
-            <div class="tab-pane fade" id="nav-features" role="tabpanel" aria-labelledby="nav-features-tab">
-
-
-                <!-- features -->
-                [bbp_amenitiess]
-                <!-- features -->
-
-
-            </div>
+<body translate="no">
+    
+    <div class="swiper-container">
+        <div class="swiper-pagination">
         </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et repellendus dicta veniam laborum, distinctio tenetur deserunt perspiciatis quas sequi architecto, voluptatibus minima quia, reiciendis non quam officiis consequatur nesciunt vel.</div>
+            <div class="swiper-slide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et repellendus dicta veniam laborum, distinctio tenetur deserunt perspiciatis quas sequi architecto, voluptatibus minima quia, reiciendis non quam officiis consequatur nesciunt vel.</div>
+            <div class="swiper-slide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et repellendus dicta veniam laborum, distinctio tenetur deserunt perspiciatis quas sequi architecto, voluptatibus minima quia, reiciendis non quam officiis consequatur nesciunt vel.</div>
+            <div class="swiper-slide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et repellendus dicta veniam laborum, distinctio tenetur deserunt perspiciatis quas sequi architecto, voluptatibus minima quia, reiciendis non quam officiis consequatur nesciunt vel.</div>
+        </div>
+    </div>
 
-    </div> <!-- tab wrapper close -->
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/2.0.3/jquery.mobile-events.min.js" integrity="sha512-cbHKEp1NB9R746n/1SEKKc8kJuqqeT1JNainv36ZK9GjEZ9xlSvucx7Y2u9UCB605tfjHGWbfDeOHiTKJeKo3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script>
-        $(function() {
-            $(".tab-content").swiperight(function() {
-                var $tab = $('#nav-tab .active').prev();
-                if ($tab.length > 0)
-                    $tab.find('a').tab('show');
-            });
-            $(".tab-content").swipeleft(function() {
-                var $tab = $('#nav-tab .active').next();
-                if ($tab.length > 0)
-                    $tab.find('a').tab('show');
-            });
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/js/swiper.min.js'></script>
+    <script id="rendered-js">
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            slidesPerView: 1,
+            paginationClickable: true,
+            loop: false,
+            paginationBulletRender: function (index, className) {
+                var tabsName = ['Apps', 'Tricks', 'People', 'Features'];
+                if (index === tabsName.length - 1) {
+                    return '<span class="' + className + '">' +
+                        tabsName[index] + '</span>' +
+                        '<div class="active-mark "></div>';
+                }
+                return '<span class="' + className + '">' + tabsName[index] + '</span>';
+            }
         });
+
     </script>
+
+
 
 </body>
 
