@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Swipeable Tabs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/css/swiper.min.css'>
+
+    <style>
+         .bppm-single-page-tab-wrapper .swiper-container {
+            width: 100%;
+            height: 100%;
+            margin-top: 50px;
+        }
+
+        .bppm-single-page-tab-wrapper .swiper-wrapper {
+            margin-top: 50px;
+        }
+
+        .bppm-single-page-tab-wrapper .swiper-slide {
+            background: #fff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            width: 100% !important;
+
+        }
+
+        .bppm-single-page-tab-wrapper .swiper-container-horizontal>.swiper-pagination {
+            top: 0;
+            bottom: auto;
+            display: flex;
+            gap: 10px;
+            justify-content: space-around;
+            background: #f0f0f0;
+        }
+
+        .bppm-single-page-tab-wrapper .swiper-container-horizontal>.swiper-pagination .swiper-pagination-bullet {
+            margin: 0;
+        }
+
+        .bppm-single-page-tab-wrapper .active-mark {
+            background: #2aa2dd;
+            width: 25%;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            transition: left 0.2s ease-out;
+        }
+
+        .bppm-single-page-tab-wrapper .swiper-pagination-bullet {
+            background-color: transparent;
+            border-radius: 0;
+            box-sizing: border-box;
+            color: #333333;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            opacity: 1;
+            height: 56px;
+            width: 25%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            transition: font-weight 0.2s ease;
+        }
+           
+
+
+        .bppm-single-page-tab-wrapper .swiper-pagination-bullet:nth-of-type(1).swiper-pagination-bullet-active~.active-mark {
+            left: 0%;
+        }
+
+        .bppm-single-page-tab-wrapper .swiper-pagination-bullet:nth-of-type(2).swiper-pagination-bullet-active~.active-mark {
+            left: 25%;
+        }
+
+        .bppm-single-page-tab-wrapper .swiper-pagination-bullet:nth-of-type(3).swiper-pagination-bullet-active~.active-mark {
+            left: 50%;
+        }
+
+        .bppm-single-page-tab-wrapper .swiper-pagination-bullet:nth-of-type(4).swiper-pagination-bullet-active~.active-mark {
+            left: 75%;
+        }
+
+        .bppm-single-page-tab-wrapper .swiper-pagination-bullet:first-of-type.swiper-pagination-bullet-active~.active-mark {
+            left: 0;
+        }
+
+        .bppm-single-page-tab-wrapper .swiper-pagination-bullet-active {
+            color: #2aa2dd;
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="bppm-single-page-tab-wrapper"> <!-- tab wrapper -->
+        <div class="swiper-container">
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+
+                    <!-- overview -->
+                <div class="single-padded-element">
+                    <h2><b>[gd_post_meta key="name" show="value-strip" no_wrap="1"
+                            font_size="0"] in [gd_post_meta key="city" show="value-strip" no_wrap="1" font_size="0"],
+                            [gd_post_meta key="region" show="value-strip" no_wrap="1" font_size="0"]</b></h2>
+                </div>
+                <div style="margin-top: 7px;"></div>
+                <div class="bppr-map-and-info-wrapper">
+                    <div class="bppr-map-container">
+                        [gd_map map_type="auto" post_settings="1" width="100%" height="350px" maptype="ROADMAP"
+                        zoom="0"]
+                        <div class="single-padded-element">
+                            [gd_post_meta key="name" show="value-strip" no_wrap="1" font_size="0"]
+                            [gd_post_meta key="address" show="value" font_size="0"]
+                            [gd_post_directions bg_color="#0073aa" txt_color="#ffffff"]
+                        </div>
+                    </div>
+                    <div class="bppr-hours-container single-padded-element">[gd_post_meta title="Business Hours"
+                        key="business_hours" font_size="0"]</div>
+                    <div class="bppr-direction-container single-padded-element">
+                        [gd_output_location title="Contact Details" location="detail" list_style="list"]</div>
+                </div>
+                <!-- overview -->
+
+                </div>
+                <div class="swiper-slide">
+
+                <!-- reviews -->
+                <div class="single-padded-element">
+                    <h2><b>Ratings and reviews for [gd_post_meta key="name" show="value-strip" no_wrap="1"
+                            font_size="0"]</b></h2>
+                    <div class="ratting-and-ratting-count">[gd_post_rating size="0" border_type="border"]</div>
+                    [gd_post_meta key="review_details" show="value" font_size="0"]
+                    [sg_google_reviews]
+                    <div style="margin: 100px 0;"></div>
+                </div>
+                <!-- reviews -->
+
+
+                </div>
+                <div class="swiper-slide">
+
+                <!-- photos -->
+                <div class="single-padded-element">
+                    [bbp_listing_all_photos]
+                 </div>
+                 <!-- photos -->
+
+                </div>
+                <div class="swiper-slide">
+
+                <!-- features -->
+                <div class="single-padded-element">
+                    [bbp_amenitiess]
+                </div>
+                <!-- features -->
+
+                </div>
+            </div>
+        </div>
+    </div> <!-- tab wrapper -->
+
+    <script
+        src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/js/swiper.min.js'></script>
+    <script id="rendered-js">
+        var swiper = new Swiper('.bppm-single-page-tab-wrapper .swiper-container', {
+            pagination: '.bppm-single-page-tab-wrapper .swiper-pagination',
+            slidesPerView: 1,
+            paginationClickable: true,
+            loop: false,
+            paginationBulletRender: function (index, className) {
+                var tabsName = ['Overview', 'Reviews', 'Photos', 'Features'];
+                if (index === tabsName.length - 1) {
+                    return '<span class="' + className + '">' +
+                        tabsName[index] + '</span>' +
+                        '<div class="active-mark "></div>';
+                }
+                return '<span class="' + className + '">' + tabsName[index] + '</span>';
+            }
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

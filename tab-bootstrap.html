@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab bootstrap</title>
+</head>
+<body>
+    
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+    <style>
+        .bppm-single-page-tab-wrapper .nav-tabs {
+            border-bottom: 1px solid #2aa2dd;
+        }
+
+        .bppm-single-page-tab-wrapper .nav-tabs .nav-link {
+            color: #2aa2dd;
+            font-weight: bold;
+        }
+
+        .bppm-single-page-tab-wrapper .nav-tabs .nav-link.active {
+            color: #495057;
+            background-color: #f1f1f1;
+            border-color: #2aa2dd #2aa2dd #fff;
+        }
+
+        .bppm-single-page-tab-wrapper {
+            margin-top: 100px;
+         }
+
+        .bppm-single-page-tab-wrapper .tab-content {
+            margin: 50px 0;
+        }
+    </style>
+
+<div class="bppm-single-page-tab-wrapper"> <!-- tab wrapper open -->
+
+        <nav class="single-padded-element">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-overview-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-overview" type="button" role="tab" aria-controls="nav-overview"
+                    aria-selected="true">Overview
+                </button>
+                <button class="nav-link" id="nav-reviews-tab" data-bs-toggle="tab" data-bs-target="#nav-reviews"
+                    type="button" role="tab" aria-controls="nav-reviews" aria-selected="false">Reviews
+                </button>
+                <button class="nav-link" id="nav-photos-tab" data-bs-toggle="tab" data-bs-target="#nav-photos"
+                    type="button" role="tab" aria-controls="nav-photos" aria-selected="false">Photos
+                </button>
+                <button class="nav-link" id="nav-features-tab" data-bs-toggle="tab" data-bs-target="#nav-features"
+                    type="button" role="tab" aria-controls="nav-features" aria-selected="false">Features
+                </button>
+            </div>
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab">
+
+
+                <!-- overview -->
+                <div class="single-padded-element">
+                    <h2><b>[gd_post_meta key="name" show="value-strip" no_wrap="1"
+                            font_size="0"] in [gd_post_meta key="city" show="value-strip" no_wrap="1" font_size="0"],
+                            [gd_post_meta key="region" show="value-strip" no_wrap="1" font_size="0"]</b></h2>
+                </div>
+                <div style="margin-top: 7px;"></div>
+                <div class="bppr-map-and-info-wrapper">
+                    <div class="bppr-map-container">
+                        [gd_map map_type="auto" post_settings="1" width="100%" height="350px" maptype="ROADMAP"
+                        zoom="0"]
+                        <div class="single-padded-element">
+                            [gd_post_meta key="name" show="value-strip" no_wrap="1" font_size="0"]
+                            [gd_post_meta key="address" show="value" font_size="0"]
+                            [gd_post_directions bg_color="#0073aa" txt_color="#ffffff"]
+                        </div>
+                    </div>
+                    <div class="bppr-hours-container single-padded-element">[gd_post_meta title="Business Hours"
+                        key="business_hours" font_size="0"]</div>
+                    <div class="bppr-direction-container single-padded-element">
+                        [gd_output_location title="Contact Details" location="detail" list_style="list"]</div>
+                </div>
+                <!-- overview -->
+
+
+            </div>
+            <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab">
+
+
+                <!-- reviews -->
+                <div class="single-padded-element">
+                    <h2><b>Ratings and reviews for [gd_post_meta key="name" show="value-strip" no_wrap="1"
+                            font_size="0"]</b></h2>
+                    <div class="ratting-and-ratting-count">[gd_post_rating size="0" border_type="border"]</div>
+                    [gd_post_meta key="review_details" show="value" font_size="0"]
+                    [sg_google_reviews]
+                    <div style="margin: 100px 0;"></div>
+                </div>
+                <!-- reviews -->
+
+
+            </div>
+            <div class="tab-pane fade" id="nav-photos" role="tabpanel" aria-labelledby="nav-photos-tab">
+
+
+                <!-- photos -->
+                <div class="single-padded-element">
+                   [bbp_listing_all_photos]
+                </div>
+                <!-- photos -->
+
+
+            </div>
+            <div class="tab-pane fade" id="nav-features" role="tabpanel" aria-labelledby="nav-features-tab">
+
+
+                <!-- features -->
+                <div class="single-padded-element">
+                [bbp_amenitiess]
+                </div>
+                <!-- features -->
+
+
+            </div>
+        </div>
+
+    </div> <!-- tab wrapper close -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+</body>
+</html>

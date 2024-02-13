@@ -1,155 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Swipeable Tabs</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/css/swiper.min.css'>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show more</title>
     <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: inherit;
+        .bppm-expanded-tab-content {
+            max-height: 100% !important;
         }
-
-        .swiper-container {
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide {
-            background: #fff;
-            color: #333;
-            min-height: 300px;
+        .bppm-single-tab-button-wrapper {
             display: flex;
             justify-content: center;
-            align-items: center;
-            text-align: left;
         }
-
-        .swiper-container-horizontal>.swiper-pagination {
-            top: 0;
-            bottom: auto;
-        }
-
-        .swiper-container-horizontal>.swiper-pagination .swiper-pagination-bullet {
-            margin: 0;
-        }
-
-        .active-mark {
-            background: #bdbdbd;
-            width: 25%;
-            height: 2px;
-            position: absolute;
-            left: 0;
-            top: 50px;
-            transition: left 0.2s ease-out;
-        }
-
-        .swiper-pagination-bullet {
-            background-color: #ffffff;
-            border-radius: 0;
-            box-sizing: border-box;
-            color: #333333;
+        #bppm_single_tab_button {
+            margin: 10px 0;
+            padding: 5px 10px;
+            border: none;
             cursor: pointer;
-            font-size: 20px;
-            font-weight: 500;
-            opacity: 1;
-            height: 56px;
-            width: 25%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-align: left;
-            transition: font-weight 0.2s ease;
+            font-weight: 600;
+            border: 0.5px solid #40465f82;
+            border-radius: 5px;
+            color: #333;
+            background: transparent;
+            transition: .3s;
         }
-        .swiper-wrapper {
-            margin-top: 50px;
-        }
-        .swiper-container {
-            width: 100% !important;
-        }
-        .swiper-slide {
-            width: 100% !important;
-        }
-
-        .swiper-pagination-bullet:nth-of-type(1).swiper-pagination-bullet-active~.active-mark {
-            left: 0%;
-        }
-
-        .swiper-pagination-bullet:nth-of-type(2).swiper-pagination-bullet-active~.active-mark {
-            left: 25%;
-        }
-
-        .swiper-pagination-bullet:nth-of-type(3).swiper-pagination-bullet-active~.active-mark {
-            left: 50%;
-        }
-        
-        .swiper-pagination-bullet:nth-of-type(4).swiper-pagination-bullet-active~.active-mark {
-            left: 75%;
-        }
-
-        .swiper-pagination-bullet:first-of-type.swiper-pagination-bullet-active~.active-mark {
-            left: 0;
-        }
-
-        .swiper-pagination-bullet-active {
+        #bppm_single_tab_button:hover {
             color: #2aa2dd;
+            background: #2aa2dd20;
         }
     </style>
-
-    <script>
-        window.console = window.console || function (t) { };
-    </script>
-
-
-
-    <script>
-        if (document.location.search.match(/type=embed/gi)) {
-            window.parent.postMessage("resize", "*");
-        }
-    </script>
-
-
 </head>
 
-<body translate="no">
-    
-    <div class="swiper-container">
-        <div class="swiper-pagination">
-        </div>
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et repellendus dicta veniam laborum, distinctio tenetur deserunt perspiciatis quas sequi architecto, voluptatibus minima quia, reiciendis non quam officiis consequatur nesciunt vel.</div>
-            <div class="swiper-slide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et repellendus dicta veniam laborum, distinctio tenetur deserunt perspiciatis quas sequi architecto, voluptatibus minima quia, reiciendis non quam officiis consequatur nesciunt vel.</div>
-            <div class="swiper-slide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et repellendus dicta veniam laborum, distinctio tenetur deserunt perspiciatis quas sequi architecto, voluptatibus minima quia, reiciendis non quam officiis consequatur nesciunt vel.</div>
-            <div class="swiper-slide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et repellendus dicta veniam laborum, distinctio tenetur deserunt perspiciatis quas sequi architecto, voluptatibus minima quia, reiciendis non quam officiis consequatur nesciunt vel.</div>
-        </div>
-    </div>
+<body>
 
-    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.2/js/swiper.min.js'></script>
-    <script id="rendered-js">
-        var swiper = new Swiper('.swiper-container', {
-            pagination: '.swiper-pagination',
-            slidesPerView: 1,
-            paginationClickable: true,
-            loop: false,
-            paginationBulletRender: function (index, className) {
-                var tabsName = ['OVerview', 'Reviews', 'Photos', 'Features'];
-                if (index === tabsName.length - 1) {
-                    return '<span class="' + className + '">' +
-                        tabsName[index] + '</span>' +
-                        '<div class="active-mark "></div>';
-                }
-                return '<span class="' + className + '">' + tabsName[index] + '</span>';
+
+    <div class="bppm-single-tab-content" style="max-height: 200px; overflow: hidden;">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto illum possimus, facilis neque, soluta ex odit
+        nesciunt, deserunt asperiores excepturi harum saepe. Excepturi temporibus, ipsa delectus molestiae voluptatum
+        itaque ipsum necessitatibus nihil assumenda magni ratione impedit atque tenetur, vel perspiciatis veritatis
+        aliquid earum modi voluptatem labore! Obcaecati veniam consequatur ducimus aliquam cumque ea libero? Numquam ab
+        iure reprehenderit? Atque tenetur cupiditate nihil dicta dolores reiciendis aperiam vero ratione fugiat quis,
+        accusamus porro officia doloremque enim est reprehenderit! Perferendis consectetur magni similique autem facilis
+        cumque at delectus officiis nobis laudantium nemo labore ad reprehenderit illo saepe doloremque quam, omnis
+        facere ipsam aliquid id excepturi tempora, iusto officia. Saepe ullam voluptate aliquam sapiente. Aliquam quam
+        quibusdam odit eius ullam eveniet facilis reiciendis libero repudiandae minima, aperiam eum amet quasi
+        doloremque? Et id amet ratione incidunt esse officiis possimus ab nulla nihil aliquam blanditiis similique
+        aperiam excepturi quas obcaecati cum repellat voluptatum suscipit praesentium minus, illum dignissimos dolorum!
+        Veniam ipsa odit enim quo sint. Blanditiis, perferendis alias, nobis iure quis voluptatibus necessitatibus nisi,
+        et maiores reprehenderit earum officiis! Rem eos natus ut ex, laudantium fugit repellendus fuga aliquid neque
+        incidunt necessitatibus quaerat esse totam aspernatur id doloremque, error unde voluptatum quidem commodi.
+        Temporibus commodi quis cumque. Doloribus exercitationem earum provident beatae odit obcaecati iure dolorem
+        molestiae blanditiis non. Facilis culpa fugit cumque dicta, voluptatibus magnam quasi tenetur eveniet cum
+        asperiores, consequatur illo iusto hic est nulla quae distinctio perferendis repellat deserunt reprehenderit ab,
+        id harum aperiam? Quasi laboriosam eum rem ab veniam sint hic amet fugiat excepturi vel deleniti maxime facilis
+        sit, aliquam sunt vitae est quia quam, nemo corrupti blanditiis? Ad dicta, labore dolorum a saepe quisquam minus
+        quia nisi maiores. Repellendus nam molestias suscipit voluptate. Nesciunt corporis amet facilis illo ducimus
+        beatae quos, iste expedita exercitationem repellat quas saepe ad doloribus obcaecati ea natus praesentium
+        repellendus quod ab accusamus pariatur dignissimos. Ipsam tempore non asperiores ut error aperiam sit deleniti
+        aliquid, cumque exercitationem! Suscipit quas accusantium placeat molestias animi, similique deserunt omnis,
+        aliquid doloribus nihil, excepturi accusamus saepe repudiandae? Distinctio repellendus dolorem tempora
+        consequatur eveniet rem? Cupiditate corrupti asperiores architecto libero ratione, sint similique voluptate
+        quasi ex. A accusamus perferendis minus error nihil quisquam dignissimos laudantium nam tempore exercitationem
+        eius explicabo maxime facilis fugiat magnam, neque odio provident? Officia facere libero explicabo, mollitia
+        distinctio quasi quas expedita inventore nihil tempore aperiam et corporis reiciendis error minima voluptates?
+        Incidunt, delectus maxime commodi unde tenetur facere! Voluptates, beatae. Deleniti consequuntur laudantium
+        dignissimos suscipit accusamus blanditiis. Hic ipsa blanditiis corporis provident, tenetur sed reprehenderit
+        commodi magnam. Commodi dolorem, quidem, excepturi saepe iusto minima facilis magnam sint alias eligendi enim
+        iste, corporis impedit! Blanditiis, quas ea. Magni rem consectetur exercitationem assumenda deserunt qui tempora
+        dolore! Architecto iure ab at praesentium id officia ex quas dicta eius velit. Molestiae eius vero perferendis
+        iusto. Autem, corrupti quas? Quidem quas officiis ab eius labore aspernatur necessitatibus optio assumenda, iste
+        ipsum ipsam sunt est consequuntur mollitia libero, iusto totam quo recusandae, quia nisi? Adipisci labore
+        veritatis ullam fugiat eum.
+    </div>
+    <div class="bppm-single-tab-button-wrapper"><button id="bppm_single_tab_button">Show more</button></div>
+
+    <script>
+        const contentDiv = document.querySelector('.bppm-single-tab-content');
+        const showButton = document.getElementById('bppm_single_tab_button');
+
+        showButton.addEventListener('click', function () {
+            contentDiv.classList.toggle('bppm-expanded-tab-content');
+
+            if (contentDiv.classList.contains('bppm-expanded-tab-content')) {
+                showButton.innerText = 'Show less';
+            } else {
+                showButton.innerText = 'Show more';
             }
         });
 
     </script>
-
-
-
 </body>
 
 </html>
