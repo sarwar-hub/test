@@ -1,120 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>show more</title>
+    <title>Color Scheme</title>
     <style>
-        * {
+        :root {
+            --primary-color: #db2777;
+            --secondary-color: #6c757d;
+            
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+
+            --light-color: #f8f8f8;
+            --dark-color: #1d2938;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            color: var(--dark-color);
         }
-            
-        .bppm-expanded-tab-content {
-            /* style for extend */
-            position: relative;
-            max-height: 100% !important;
+        h2 {
+            padding: 10px;
+            text-align: center;
+            background-color: #f8f8f8;
         }
-        .bppm-single-tab-content {
-            position: relative;
+        span {
+            color: #db2777;
         }
-        .bppm-single-tab-content-overlay {
-            position: absolute;
-            bottom: 0;
-            background: linear-gradient(#ffffff00, #fff);
-            width: 100%;
-            height: 100px;
-            z-index: 9999;
+        .color-scheme {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
         }
-        .bppm-single-tab-button-wrapper {
-            display: flex;
-            justify-content: center;
-        }
-        #bppm_single_tab_button {
-            margin: 10px 0;
-            padding: 5px 10px;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            border: 0.5px solid #40465f82;
+
+        .color-box {
+            padding: 20px;
             border-radius: 5px;
-            color: #333;
-            background: transparent;
-            transition: .3s;
+            color: var(--light-color);
+            text-align: center;
         }
-        #bppm_single_tab_button:hover {
-            color: #2aa2dd;
-            background: #2aa2dd20;
+
+        .primary { background-color: var(--primary-color); }
+        .secondary { background-color: var(--secondary-color); }
+        .light { background-color: var(--light-color); color: var(--dark-color); }
+        .dark { background-color: var(--dark-color); color: var(--light-color); }
+
+        .button {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
         }
     </style>
 </head>
-
 <body>
+    <h2>Color Scheme for <span>Quran</span>erpath</h2>
+    <div class="color-scheme">
+        <div class="color-box primary">Primary</div>
+        <div class="color-box secondary">Secondary</div>
+        <div class="color-box light">Light</div>
+        <div class="color-box dark">Dark</div>
 
-
-    <div class="bppm-single-tab-content" style="max-height: 200px; overflow: hidden;">
-        <div class="bppm-single-tab-content-overlay"></div>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto illum possimus, facilis neque, soluta ex odit
-        nesciunt, deserunt asperiores excepturi harum saepe. Excepturi temporibus, ipsa delectus molestiae voluptatum
-        itaque ipsum necessitatibus nihil assumenda magni ratione impedit atque tenetur, vel perspiciatis veritatis
-        aliquid earum modi voluptatem labore! Obcaecati veniam consequatur ducimus aliquam cumque ea libero? Numquam ab
-        iure reprehenderit? Atque tenetur cupiditate nihil dicta dolores reiciendis aperiam vero ratione fugiat quis,
-        accusamus porro officia doloremque enim est reprehenderit! Perferendis consectetur magni similique autem facilis
-        cumque at delectus officiis nobis laudantium nemo labore ad reprehenderit illo saepe doloremque quam, omnis
-        facere ipsam aliquid id excepturi tempora, iusto officia. Saepe ullam voluptate aliquam sapiente. Aliquam quam
-        quibusdam odit eius ullam eveniet facilis reiciendis libero repudiandae minima, aperiam eum amet quasi
-        doloremque? Et id amet ratione incidunt esse officiis possimus ab nulla nihil aliquam blanditiis similique
-        aperiam excepturi quas obcaecati cum repellat voluptatum suscipit praesentium minus, illum dignissimos dolorum!
-        Veniam ipsa odit enim quo sint. Blanditiis, perferendis alias, nobis iure quis voluptatibus necessitatibus nisi,
-        et maiores reprehenderit earum officiis! Rem eos natus ut ex, laudantium fugit repellendus fuga aliquid neque
-        incidunt necessitatibus quaerat esse totam aspernatur id doloremque, error unde voluptatum quidem commodi.
-        Temporibus commodi quis cumque. Doloribus exercitationem earum provident beatae odit obcaecati iure dolorem
-        molestiae blanditiis non. Facilis culpa fugit cumque dicta, voluptatibus magnam quasi tenetur eveniet cum
-        asperiores, consequatur illo iusto hic est nulla quae distinctio perferendis repellat deserunt reprehenderit ab,
-        id harum aperiam? Quasi laboriosam eum rem ab veniam sint hic amet fugiat excepturi vel deleniti maxime facilis
-        sit, aliquam sunt vitae est quia quam, nemo corrupti blanditiis? Ad dicta, labore dolorum a saepe quisquam minus
-        quia nisi maiores. Repellendus nam molestias suscipit voluptate. Nesciunt corporis amet facilis illo ducimus
-        beatae quos, iste expedita exercitationem repellat quas saepe ad doloribus obcaecati ea natus praesentium
-        repellendus quod ab accusamus pariatur dignissimos. Ipsam tempore non asperiores ut error aperiam sit deleniti
-        aliquid, cumque exercitationem! Suscipit quas accusantium placeat molestias animi, similique deserunt omnis,
-        aliquid doloribus nihil, excepturi accusamus saepe repudiandae? Distinctio repellendus dolorem tempora
-        consequatur eveniet rem? Cupiditate corrupti asperiores architecto libero ratione, sint similique voluptate
-        quasi ex. A accusamus perferendis minus error nihil quisquam dignissimos laudantium nam tempore exercitationem
-        eius explicabo maxime facilis fugiat magnam, neque odio provident? Officia facere libero explicabo, mollitia
-        distinctio quasi quas expedita inventore nihil tempore aperiam et corporis reiciendis error minima voluptates?
-        Incidunt, delectus maxime commodi unde tenetur facere! Voluptates, beatae. Deleniti consequuntur laudantium
-        dignissimos suscipit accusamus blanditiis. Hic ipsa blanditiis corporis provident, tenetur sed reprehenderit
-        commodi magnam. Commodi dolorem, quidem, excepturi saepe iusto minima facilis magnam sint alias eligendi enim
-        iste, corporis impedit! Blanditiis, quas ea. Magni rem consectetur exercitationem assumenda deserunt qui tempora
-        dolore! Architecto iure ab at praesentium id officia ex quas dicta eius velit. Molestiae eius vero perferendis
-        iusto. Autem, corrupti quas? Quidem quas officiis ab eius labore aspernatur necessitatibus optio assumenda, iste
-        ipsum ipsam sunt est consequuntur mollitia libero, iusto totam quo recusandae, quia nisi? Adipisci labore
-        veritatis ullam fugiat eum.
-        
     </div>
-    <div class="bppm-single-tab-button-wrapper"><button id="bppm_single_tab_button">Show more</button></div>
-
-    <script>
-        const contentDiv = document.querySelector('.bppm-single-tab-content');
-        const contentDivOverlay = document.querySelector('.bppm-single-tab-content-overlay');
-        const showButton = document.getElementById('bppm_single_tab_button');
-
-        showButton.addEventListener('click', function () {
-            contentDiv.classList.toggle('bppm-expanded-tab-content');
-
-            if (contentDiv.classList.contains('bppm-expanded-tab-content')) {
-                showButton.innerText = 'Show less';
-                contentDivOverlay.style.display = "none";
-
-            } else {
-                showButton.innerText = 'Show more';
-                contentDivOverlay.style.display = "block";
-            }
-        });
-
-    </script>
 </body>
-
 </html>
