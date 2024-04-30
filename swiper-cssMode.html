@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* popular tags slider open */
+
+
+.bppm-secondary-listing-slider{
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+    max-width: 100%;
+    border-radius: 13px;
+}
+
+.bppm-secondary-listing-slider .icon{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.bppm-secondary-listing-slider .icon:first-child{
+    left: 0;
+    display: none;
+}
+
+.bppm-secondary-listing-slider .icon:last-child{
+    right: 0;
+    justify-content: flex-end;
+}
+
+.bppm-secondary-listing-slider .icon i{
+    width: 35px;
+    height: 45px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 55px;
+    background: #efedfb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bppm-secondary-listing-slider .icon i:hover{
+    color: #2AA4DD;
+}
+
+.bppm-secondary-listing-slider .bppm-items-container{
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.bppm-items-container.dragging {
+    scroll-behavior: auto;
+    cursor: grab;
+}
+
+@media screen and (max-width:770px) {
+     
+	.bppm-secondary-listing-slider .bppm-items-container {
+    overflow-x: auto !important;
+}
+
+}
+
+/* popular tags slider closed */
+    </style>
+</head>
+<body>
+    
+
+    <div class="bppm-secondary-listing-slider">
+        <div class="icon"><i id="left" class="fas fa-chevron-left"></i></div>
+        <div class="bppm-items-container">
+           
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           
+        </div>
+        <div class="icon"><i id="right" class="fas fa-chevron-right"></i></div>
+    </div>
+    <div class="bppm-secondary-listing-slider">
+        <div class="icon"><i id="left" class="fas fa-chevron-left"></i></div>
+        <div class="bppm-items-container">
+           
+           <div class="slide-list-item"><a class="">list item</a></div>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           <span class="slide-list-item"><a class="">list item</a></span>
+           
+        </div>
+        <div class="icon"><i id="right" class="fas fa-chevron-right"></i></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // listing slider secodary open
+const sliderContainers = document.querySelectorAll('.bppm-secondary-listing-slider');
+sliderContainers.forEach(sliderContainer => {
+const slideContainer = sliderContainer.querySelector(".bppm-items-container"),
+      slideItems = slideContainer.querySelectorAll(".slide-list-item"),
+      slideIcons = sliderContainer.querySelectorAll(".icon i");
+    
+        let isDraggingSlide = false;
+    
+        const handleSlideIcons = (scrollVal) => {
+            let maxScrollableWidthSlider = slideContainer.scrollWidth - slideContainer.clientWidth;
+            slideIcons[0].parentElement.style.display = scrollVal <= 0 ? "none" : "flex";
+            slideIcons[1].parentElement.style.display = maxScrollableWidthSlider - scrollVal <= 1 ? "none" : "flex";
+        }
+    
+        slideIcons.forEach(icon => {
+            icon.addEventListener("click", () => {
+                // if clicked icon is left, reduce 350 from tagsBox scrollLeft else add
+                let scrollWidthSlider = slideContainer.scrollLeft += icon.id === "left" ? -340 : 340;
+                handleSlideIcons(scrollWidthSlider);
+            });
+        });
+    
+        const draggingSlide = (e) => {
+            e.preventDefault();
+            if (!isDraggingSlide) return;
+            slideContainer.classList.add("dragging");
+            slideContainer.scrollLeft -= e.movementX;
+            handleSlideIcons(slideContainer.scrollLeft)
+        }
+    
+        const dragStopSlide = () => {
+            isDraggingSlide = false;
+            slideContainer.classList.remove("dragging");
+        }
+    
+        slideContainer.addEventListener("mousedown", () => isDraggingSlide = true);
+        slideContainer.addEventListener("mousemove", draggingSlide);
+        document.addEventListener("mouseup", dragStopSlide);
+    
+});
+// listing slider secodary close
+    </script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+ <style>
+    /* popular tags slider open */
+
+.bppm-tags-slider-wrapper,
+.bppm-tags-for-filter{
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+    max-width: 100%;
+    border-radius: 13px;
+}
+
+.bppm-tags-slider-wrapper .icon,
+.bppm-tags-for-filter .icon{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.bppm-tags-slider-wrapper .icon:first-child,
+.bppm-tags-for-filter .icon::first-child{
+    left: 0;
+    display: none;
+}
+
+.bppm-tags-slider-wrapper .icon:last-child,
+.bppm-tags-for-filter .icon::first-child{
+    right: 0;
+    justify-content: flex-end;
+}
+
+.bppm-tags-slider-wrapper .icon i,
+.bppm-tags-for-filter .icon i{
+    width: 35px;
+    height: 45px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 55px;
+    background: #efedfb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bppm-tags-slider-wrapper .icon i:hover,
+.bppm-tags-for-filter .icon i:hover{
+    color: #2AA4DD;
+}
+
+.bppm-tags-slider-wrapper .tags-box,
+.bppm-tags-for-filter .tags-box{
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.bppm-tags-slider-wrapper ul.tags-box,
+.bppm-tags-for-filter ul.tags-box{
+margin: 0px 0px 0px 0px !important;
+padding: 10px 0;
+color: black !important;
+}
+
+.tags-box.dragging {
+    scroll-behavior: auto;
+    cursor: grab;
+}
+.bppm-active-swipe-menu-item {
+            background-color: #2aa2dd !important;
+            color: white !important;
+}
+.bppm-tags-slider-wrapper .tags-box .tag,
+.bppm-tags-for-filter .tags-box .tag{
+    cursor: pointer;
+    font-size: 16px;
+        
+    white-space: nowrap;
+    padding: 2px 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	color: black;
+}
+
+.bppm-tags-slider-wrapper .tags-box .tag a,
+.bppm-tags-for-filter .tags-box .tag a{
+color: inherit;
+font-weight: 600;
+	text-decoration: none !important;
+}
+.bppm-tags-slider-wrapper .tags-box .tag a:hover,
+.bppm-tags-for-filter .tags-box .tag a:hover{
+text-decoration: none !important;
+}
+.bppm-tags-slider-wrapper .tags-box .tag:hover,
+.bppm-tags-for-filter .tags-box .tag:hover
+{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 8px;
+}
+
+.bppm-tags-slider-wrapper .tags-box.dragging .tag,
+.bppm-tags-for-filter .tags-box.dragging .tag{
+    user-select: none;
+    pointer-events: none;
+}
+
+
+
+@media screen and (max-width:770px) {
+     .bppm-tags-slider-wrapper ul.tags-box,
+	.bppm-tags-for-filter ul.tags-box {
+    overflow-x: auto !important;
+}
+
+}
+
+/* popular tags slider closed */
+ </style>
+<div class="main-wrapper">
+
+    <div class="bppm-tags-for-filter">
+        <div class="icon"><i id="left" class="fas fa-chevron-left"></i></div>
+        <ul class="tags-box">
+       
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+      
+        </ul>
+        <div class="icon"><i id="right" class="fas fa-chevron-right"></i></div>
+    </div>
+    
+</div>
+
+<div class="main-wrapper">
+
+    <div class="bppm-tags-for-filter">
+        <div class="icon"><i id="left" class="fas fa-chevron-left"></i></div>
+        <ul class="tags-box">
+       
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+            <span class="tag bppm-swipe-menu-item" onclick="handleActiveTab(this)"><a class="bbp-min">lorem ipsum dolor</a></span>
+      
+        </ul>
+        <div class="icon"><i id="right" class="fas fa-chevron-right"></i></div>
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+
+
+// tags slider open
+const allTagContainers = document.querySelectorAll('.bppm-tags-for-filter');
+allTagContainers.forEach(tagContainer => {
+const tagsBoxFilter = tagContainer.querySelector(".tags-box"),
+      allTagsFilter = tagsBoxFilter.querySelectorAll(".tag"),
+      arrowIconsTagFilter = tagContainer.querySelectorAll(".icon i");
+    
+        let isDraggingFilter = false;
+    
+        const handleIconsTagFilter = (scrollVal) => {
+            let maxScrollableWidthFilter = tagsBoxFilter.scrollWidth - tagsBoxFilter.clientWidth;
+            arrowIconsTagFilter[0].parentElement.style.display = scrollVal <= 0 ? "none" : "flex";
+            arrowIconsTagFilter[1].parentElement.style.display = maxScrollableWidthFilter - scrollVal <= 1 ? "none" : "flex";
+        }
+    
+        arrowIconsTagFilter.forEach(icon => {
+            icon.addEventListener("click", () => {
+                // if clicked icon is left, reduce 350 from tagsBox scrollLeft else add
+                let scrollWidthFilter = tagsBoxFilter.scrollLeft += icon.id === "left" ? -340 : 340;
+                handleIconsTagFilter(scrollWidthFilter);
+            });
+        });
+    
+        const draggingFilter = (e) => {
+            if (!isDraggingFilter) return;
+            tagsBoxFilter.classList.add("dragging");
+            tagsBoxFilter.scrollLeft -= e.movementX;
+            handleIconsTagFilter(tagsBoxFilter.scrollLeft)
+        }
+    
+        const dragStopFilter = () => {
+            isDraggingFilter = false;
+            tagsBoxFilter.classList.remove("dragging");
+        }
+    
+        tagsBoxFilter.addEventListener("mousedown", () => isDraggingFilter = true);
+        tagsBoxFilter.addEventListener("mousemove", draggingFilter);
+        document.addEventListener("mouseup", dragStopFilter);
+    
+});
+// tags slider closed
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

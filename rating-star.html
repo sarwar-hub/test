@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container p {
+      background: #425771;
+      width: 200px;
+    }
+    span.stars,
+    span.stars span {
+      display: block;
+      background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star-o-white.svg) 0 0 repeat-x;
+      width: 200px;
+      /* width of a star multiplied by 5 */
+      height: 40px;
+      /* the height of the star */
+      background-size: 40px 40px;
+    }
+
+    span.stars span {
+      background-position: 0 0;
+      background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star.svg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <p><span class="stars">2.2</span></p>
+    <p><span class="stars">3.3</span></p>
+    <p><span class="stars">3.5</span></p>
+    <p><span class="stars">4.2</span></p>
+    <p><span class="stars">4.8</span></p>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    var starWidth = 40;
+
+    $.fn.stars = function () {
+      return $(this).each(function () {
+        $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * starWidth));
+      });
+    }
+    $(document).ready(function () {
+      $('span.stars').stars();
+    });
+  </script>
+</body>
+
+</html>!

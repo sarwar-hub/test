@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skeleton Loader</title>
+</head>
+<style>
+    .skeleton-23hfl1sv181:empty {
+        position: relative;
+        height: 290px;
+        background-color: #ffffff;
+        border-radius: 0px 0px 0px 0px;
+        background-image: linear-gradient(#cccccc 50px, transparent 0), linear-gradient(#cccccc 200px, transparent 0);
+        background-repeat: repeat-y;
+        background-size: 300px 290px, 300px 290px;
+        background-position: left 10px top 226px, left 10px top 10px;
+    }
+
+    .skeleton-23hfl1sv181:empty:before {
+        content: ' ';
+        position: absolute;
+        z-index: 1000;
+        width: 100%;
+        height: 290px;
+        -webkit-mask-image: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 80%);
+        -webkit-mask-repeat: repeat-y;
+        -webkit-mask-size: 50px 290px;
+        -webkit-mask-position: -20% 0;
+        background-image: linear-gradient(rgba(102, 102, 102, 1) 50px, transparent 0), linear-gradient(rgba(102, 102, 102, 1) 200px, transparent 0);
+        background-repeat: repeat-y;
+        background-size: 300px 290px, 300px 290px;
+        background-position: left 10px top 226px, left 10px top 10px;
+        animation: shineForSkeleton-23hfl1sv181 2s infinite;
+    }
+
+    @keyframes shineForSkeleton-23hfl1sv181 {
+        to {
+            -webkit-mask-position: 120% 0
+        }
+    }
+    .bppm-loader-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .skeleton {
+       
+    }
+
+ 
+    @media screen and (max-width:900px) {
+        .bppm-loader-container div:nth-child(n+3) {
+            display: none;
+        }
+    }
+    @media screen and (max-width:767px) {
+        .bppm-loader-container div:nth-child(n+2) {
+            display: none;
+        }
+    }
+</style>
+
+<body>
+    <div class="bppm-loader-container">
+        <div class="skeleton skeleton-23hfl1sv181"></div>
+        <div class="skeleton skeleton-23hfl1sv181"></div>
+        <div class="skeleton skeleton-23hfl1sv181"></div>
+        <div class="skeleton skeleton-23hfl1sv181"></div>  
+    </div>
+</body>
+
+</html>

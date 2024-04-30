@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smooth Appear on Click</title>
+<style>
+.content {
+    opacity: 0;
+    transform: translateY(0px);
+    transition: all 0.5s ease;
+    overflow: hidden;
+    background: red;
+}
+
+
+.content.visible {
+    height: auto;
+    opacity: 1;
+    transform: translateY(10px);
+}
+</style>
+</head>
+
+<body>
+
+    <button id="toggleButton">Toggle Content</button>
+    <div id="content" class="content up">
+        This content appears smoothly on click!
+    </div>
+
+
+
+
+
+    <script>
+    
+        const button = document.getElementById('toggleButton');
+        const content = document.querySelector('.content');
+        
+
+        button.addEventListener('click', function() {            
+            content.classList.toggle('visible');
+        });
+
+    </script>
+
+</body>
+</html>

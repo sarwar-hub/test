@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Section Titles</title>
+    <style>
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .title {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            position: -webkit-sticky; /* For Safari */
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Ensure the sticky title is above other content */
+        }
+        .inner-title {
+            background-color: #015690;
+            color: white;
+            padding: 10px;
+            width: 200px;
+            position: -webkit-sticky; /* For Safari */
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Ensure the sticky title is above other content */
+        }
+
+        .content {
+            height: 400px; /* Set a height to make sure there's enough content to scroll */
+            overflow-y: auto; /* Make content scrollable */
+            padding: 10px;
+            background-color: #ecf0f1;
+            border: 1px solid #bdc3c7;
+        }
+
+        /* Add some general styling for the body to avoid content being hidden under the sticky titles */
+        body {
+            padding-top: 1px;
+            font-family: Arial, sans-serif;margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="section">
+    <div class="title">Section 1 Title</div>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ullam sint ut enim, aut aspernatur nostrum natus, aperiam numquam nam consectetur? Sed debitis placeat nemo! Adipisci, sit ea iusto iste qui repellat. Tempore amet animi, optio veritatis neque distinctio sit quia voluptatum doloribus accusantium, nesciunt voluptates sunt nisi nihil ab quod magni consequuntur repellat quasi velit. Assumenda dicta iusto a tempore odit, totam facere culpa, delectus ut fugit possimus neque rerum? A culpa optio corrupti consequatur odio quisquam aperiam perspiciatis eaque quo! Nulla fuga dicta architecto iusto vitae placeat rerum fugit maiores explicabo eligendi minus expedita amet ipsa est, enim dolores quis, iure saepe asperiores sit, perferendis accusantium ut recusandae adipisci? Illum consequatur ratione fugiat temporibus. Enim aliquam laboriosam similique commodi? Atque repellat pariatur labore, voluptates est tempore, reprehenderit similique fuga deleniti libero possimus, assumenda consectetur totam recusandae. Ratione placeat repellat, velit quaerat tempora, ad corporis porro animi eum recusandae error hic, minima neque quos enim in quisquam odio nemo quasi ullam nobis ipsa sed aperiam fuga? Dolores, debitis quisquam ullam explicabo repudiandae aperiam dolorum molestias at dignissimos temporibus quae fugiat eligendi dolore expedita optio nemo officiis veritatis quaerat ducimus beatae animi. Officiis nisi corporis, voluptates molestias voluptatum ut. Sit voluptate quis ad possimus sed animi eum perferendis illo obcaecati natus totam ut similique optio aliquam, fugiat tempora quam minima porro iusto amet. Ab dolor et molestiae voluptatibus maxime magni tenetur tempore! Magni, optio ut totam, ad a necessitatibus accusamus tempora aliquid dolores perspiciatis officia possimus. Repellat modi necessitatibus ipsum esse iusto mollitia dignissimos autem earum voluptates voluptatum, quaerat eos iure rem facilis reprehenderit aliquid, beatae reiciendis molestias praesentium, alias nihil nobis obcaecati! Sunt est inventore quo nisi, corporis nam nulla accusantium. Aut officiis minima ratione aperiam, quam laboriosam deserunt. Omnis quis incidunt impedit tenetur adipisci nulla eos voluptatum necessitatibus! </p>
+        <div class="inner-title">Section inner Title</div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ullam sint ut enim, aut aspernatur nostrum natus, aperiam numquam nam consectetur? Sed debitis placeat nemo! Adipisci, sit ea iusto iste qui repellat. Tempore amet animi, optio veritatis neque distinctio sit quia voluptatum doloribus accusantium, nesciunt voluptates sunt nisi nihil ab quod magni consequuntur repellat quasi velit. Assumenda dicta iusto a tempore odit, totam facere culpa, delectus ut fugit possimus neque rerum? A culpa optio corrupti consequatur odio quisquam aperiam perspiciatis eaque quo! Nulla fuga dicta architecto iusto vitae placeat rerum fugit maiores explicabo eligendi minus expedita amet ipsa est, enim dolores quis, iure saepe asperiores sit, perferendis accusantium ut recusandae adipisci? Illum consequatur ratione fugiat temporibus. Enim aliquam laboriosam similique commodi? Atque repellat pariatur labore, voluptates est tempore, reprehenderit similique fuga deleniti libero possimus, assumenda consectetur totam recusandae. Ratione placeat repellat, velit quaerat tempora, ad corporis porro animi eum recusandae error hic, minima neque quos enim in quisquam odio nemo quasi ullam nobis ipsa sed aperiam fuga? Dolores, debitis quisquam ullam explicabo repudiandae aperiam dolorum molestias at dignissimos temporibus quae fugiat eligendi dolore expedita optio nemo officiis veritatis quaerat ducimus beatae animi. Officiis nisi corporis, voluptates molestias voluptatum ut. Sit voluptate quis ad possimus sed animi eum perferendis illo obcaecati natus totam ut similique optio aliquam, fugiat tempora quam minima porro iusto amet. Ab dolor et molestiae voluptatibus maxime magni tenetur tempore! Magni, optio ut totam, ad a necessitatibus accusamus tempora aliquid dolores perspiciatis officia possimus. Repellat modi necessitatibus ipsum esse iusto mollitia dignissimos autem earum voluptates voluptatum, quaerat eos iure rem facilis reprehenderit aliquid, beatae reiciendis molestias praesentium, alias nihil nobis obcaecati! Sunt est inventore quo nisi, corporis nam nulla accusantium. Aut officiis minima ratione aperiam, quam laboriosam deserunt. Omnis quis incidunt impedit tenetur adipisci nulla eos voluptatum necessitatibus! </p>
+        <!-- Repeat or add more content to ensure scrollability -->
+    </div>
+</div>
+
+<div class="section">
+    <div class="title">Section 2 Title</div>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ullam sint ut enim, aut aspernatur nostrum natus, aperiam numquam nam consectetur? Sed debitis placeat nemo! Adipisci, sit ea iusto iste qui repellat. Tempore amet animi, optio veritatis neque distinctio sit quia voluptatum doloribus accusantium, nesciunt voluptates sunt nisi nihil ab quod magni consequuntur repellat quasi velit. Assumenda dicta iusto a tempore odit, totam facere culpa, delectus ut fugit possimus neque rerum? A culpa optio corrupti consequatur odio quisquam aperiam perspiciatis eaque quo! Nulla fuga dicta architecto iusto vitae placeat rerum fugit maiores explicabo eligendi minus expedita amet ipsa est, enim dolores quis, iure saepe asperiores sit, perferendis accusantium ut recusandae adipisci? Illum consequatur ratione fugiat temporibus. Enim aliquam laboriosam similique commodi? Atque repellat pariatur labore, voluptates est tempore, reprehenderit similique fuga deleniti libero possimus, assumenda consectetur totam recusandae. Ratione placeat repellat, velit quaerat tempora, ad corporis porro animi eum recusandae error hic, minima neque quos enim in quisquam odio nemo quasi ullam nobis ipsa sed aperiam fuga? Dolores, debitis quisquam ullam explicabo repudiandae aperiam dolorum molestias at dignissimos temporibus quae fugiat eligendi dolore expedita optio nemo officiis veritatis quaerat ducimus beatae animi. Officiis nisi corporis, voluptates molestias voluptatum ut. Sit voluptate quis ad possimus sed animi eum perferendis illo obcaecati natus totam ut similique optio aliquam, fugiat tempora quam minima porro iusto amet. Ab dolor et molestiae voluptatibus maxime magni tenetur tempore! Magni, optio ut totam, ad a necessitatibus accusamus tempora aliquid dolores perspiciatis officia possimus. Repellat modi necessitatibus ipsum esse iusto mollitia dignissimos autem earum voluptates voluptatum, quaerat eos iure rem facilis reprehenderit aliquid, beatae reiciendis molestias praesentium, alias nihil nobis obcaecati! Sunt est inventore quo nisi, corporis nam nulla accusantium. Aut officiis minima ratione aperiam, quam laboriosam deserunt. Omnis quis incidunt impedit tenetur adipisci nulla eos voluptatum necessitatibus! </p>
+        <!-- Repeat or add more content to ensure scrollability -->
+    </div>
+</div>
+
+<div class="section">
+    <div class="title">Section 3 Title</div>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ullam sint ut enim, aut aspernatur nostrum natus, aperiam numquam nam consectetur? Sed debitis placeat nemo! Adipisci, sit ea iusto iste qui repellat. Tempore amet animi, optio veritatis neque distinctio sit quia voluptatum doloribus accusantium, nesciunt voluptates sunt nisi nihil ab quod magni consequuntur repellat quasi velit. Assumenda dicta iusto a tempore odit, totam facere culpa, delectus ut fugit possimus neque rerum? A culpa optio corrupti consequatur odio quisquam aperiam perspiciatis eaque quo! Nulla fuga dicta architecto iusto vitae placeat rerum fugit maiores explicabo eligendi minus expedita amet ipsa est, enim dolores quis, iure saepe asperiores sit, perferendis accusantium ut recusandae adipisci? Illum consequatur ratione fugiat temporibus. Enim aliquam laboriosam similique commodi? Atque repellat pariatur labore, voluptates est tempore, reprehenderit similique fuga deleniti libero possimus, assumenda consectetur totam recusandae. Ratione placeat repellat, velit quaerat tempora, ad corporis porro animi eum recusandae error hic, minima neque quos enim in quisquam odio nemo quasi ullam nobis ipsa sed aperiam fuga? Dolores, debitis quisquam ullam explicabo repudiandae aperiam dolorum molestias at dignissimos temporibus quae fugiat eligendi dolore expedita optio nemo officiis veritatis quaerat ducimus beatae animi. Officiis nisi corporis, voluptates molestias voluptatum ut. Sit voluptate quis ad possimus sed animi eum perferendis illo obcaecati natus totam ut similique optio aliquam, fugiat tempora quam minima porro iusto amet. Ab dolor et molestiae voluptatibus maxime magni tenetur tempore! Magni, optio ut totam, ad a necessitatibus accusamus tempora aliquid dolores perspiciatis officia possimus. Repellat modi necessitatibus ipsum esse iusto mollitia dignissimos autem earum voluptates voluptatum, quaerat eos iure rem facilis reprehenderit aliquid, beatae reiciendis molestias praesentium, alias nihil nobis obcaecati! Sunt est inventore quo nisi, corporis nam nulla accusantium. Aut officiis minima ratione aperiam, quam laboriosam deserunt. Omnis quis incidunt impedit tenetur adipisci nulla eos voluptatum necessitatibus! </p>
+        <!-- Repeat or add more content to ensure scrollability -->
+    </div>
+</div>
+
+</body>
+</html>
