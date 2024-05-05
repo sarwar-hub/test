@@ -1,17 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwindcss</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
-<body>
-    <div class="flex flex-col md:flex-row">
-        <h1>Hello world!</h1>
-        <h1>Hello world!</h1>
-        <h1>Hello world!</h1>
+
+<body class="max-w-[1200px] m-auto">
+
+    <div class="ud-archive-item"> <!-- archive item wrapper desktop -->
+        <div class="flex gap-5 bg-secodary/10 shadow-lg">
+            <div class="relative"> <!-- image -->
+                <div class="grid grid-cols-3 grid-rows-2 gap-[4px] h-[250px] max-w-[350px]"> <!-- image grid -->
+                    <img class="col-span-2 row-span-2 h-[250px] object-cover rounded-sm" src="/images/image1.jpg"
+                        alt="">
+                    <img class="h-[123px] object-cover rounded-sm" src="/images/image2.jpg" alt="">
+                    <img class="h-[123px] object-cover rounded-sm" src="/images/image3.jpg" alt="">
+                </div>
+                <!-- count -->
+                <div class="absolute right-5 top-5 bg-black/50 text-white rounded-full py-1 px-2"> <!-- count -->
+                    <i class="fa-solid fa-image"></i>
+                    <span class="font-semibold">45</span>
+                </div>
+            </div>
+            <div> <!-- detail texts-->
+                <div> <!-- top -->
+                    <p>Listing title</p>
+                    <span>*****</span> <span>1400 reviews</span> <span>Featured</span>
+                </div>
+                <div> <!-- middle -->
+                    <p>Closed Now</p>
+                    <p>Phone Direction Website Reviews</p>
+                    <p>Address, addressm address</p>
+                </div>
+                <div> <!-- bottom -->
+                    <p>Category</p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <br><br><br>
+
+    <div class="ud-listing-slider-wrapper">
+        <div class="swiper ud-listing-slider"> <!-- swiper main -->
+            <div class="swiper-wrapper"> <!-- swiper wrapper -->
+                <div class="swiper-slide"> <!-- slide item -->
+                    <div class="ud-archive-item-slider">
+                        <div class="flex flex-col gap-2 bg-secondary/10 shadow-md">
+                            <div class="relative"> <!-- image -->
+                                <div class="grid grid-cols-3 grid-rows-2 gap-[4px] h-[200px]"> <!-- image grid -->
+                                    <img class="col-span-2 row-span-2 h-[200px] object-cover rounded-sm"
+                                        src="/images/image1.jpg" alt="">
+                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image2.jpg" alt="">
+                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image3.jpg" alt="">
+                                </div>
+                                <!-- count -->
+                                <div class="absolute right-5 top-5 bg-black/50 text-white rounded-full py-1 px-2"> <!-- count -->
+                                    <i class="fa-solid fa-image"></i>
+                                    <span class="font-semibold">45</span>
+                                </div>
+                            </div>
+                            <div class="py-2"> <!-- detail texts-->
+                                <p>Listing title</p>
+                                <span>*****</span> <span>1400 reviews</span> <span>Featured</span>
+                                <p>address</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <!-- slide item -->
+                    <div class="ud-archive-item-slider">
+                        <div class="flex flex-col gap-2 bg-secondary/10 shadow-md">
+                            <div class="relative"> <!-- image -->
+                                <div class="grid grid-cols-3 grid-rows-2 gap-[4px] h-[200px]"> <!-- image grid -->
+                                    <img class="col-span-2 row-span-2 h-[200px] object-cover rounded-sm"
+                                        src="/images/image1.jpg" alt="">
+                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image2.jpg" alt="">
+                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image3.jpg" alt="">
+                                </div>
+                                <!-- count -->
+                                <div class="absolute right-5 top-5 bg-black/50 text-white rounded-full py-1 px-2"> <!-- count -->
+                                    <i class="fa-solid fa-image"></i>
+                                    <span class="font-semibold">45</span>
+                                </div>
+                            </div>
+                            <div class="py-2"> <!-- detail texts-->
+                                <p>Listing title</p>
+                                <span>*****</span> <span>1400 reviews</span> <span>Featured</span>
+                                <p>address</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <!-- slide item -->
+                    <div class="ud-archive-item-slider">
+                        <div class="flex flex-col gap-2 bg-secondary/10 shadow-md">
+                            <div class="relative"> <!-- image -->
+                                <div class="grid grid-cols-3 grid-rows-2 gap-[4px] h-[200px]"> <!-- image grid -->
+                                    <img class="col-span-2 row-span-2 h-[200px] object-cover rounded-sm"
+                                        src="/images/image1.jpg" alt="">
+                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image2.jpg" alt="">
+                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image3.jpg" alt="">
+                                </div>
+                                <!-- count -->
+                                <div class="absolute right-5 top-5 bg-black/50 text-white rounded-full py-1 px-2"> <!-- count -->
+                                    <i class="fa-solid fa-image"></i>
+                                    <span class="font-semibold">45</span>
+                                </div>
+                            </div>
+                            <div class="py-2"> <!-- detail texts-->
+                                <p>Listing title</p>
+                                <span>*****</span> <span>1400 reviews</span> <span>Featured</span>
+                                <p>address</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <!-- slide item -->
+                    <div class="ud-archive-item-slider">
+                        <div class="flex flex-col gap-2 bg-secondary/10 shadow-md">
+                            <div class="relative"> <!-- image -->
+                                <div class="grid grid-cols-3 grid-rows-2 gap-[4px] h-[200px]"> <!-- image grid -->
+                                    <img class="col-span-2 row-span-2 h-[200px] object-cover rounded-sm"
+                                        src="/images/image1.jpg" alt="">
+                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image2.jpg" alt="">
+                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image3.jpg" alt="">
+                                </div>
+                                <!-- count -->
+                                <div class="absolute right-5 top-5 bg-black/50 text-white rounded-full py-1 px-2"> <!-- count -->
+                                    <i class="fa-solid fa-image"></i>
+                                    <span class="font-semibold">45</span>
+                                </div>
+                            </div>
+                            <div class="py-2"> <!-- detail texts-->
+                                <p>Listing title</p>
+                                <span>*****</span> <span>1400 reviews</span> <span>Featured</span>
+                                <p>address</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide"> <!-- slide item -->
+                    <div class="ud-archive-item-slider">
+                        <div class="flex flex-col gap-2 bg-secondary/10 shadow-md">
+                            <div class="relative"> <!-- image -->
+                                <div class="grid grid-cols-3 grid-rows-2 gap-[4px] h-[200px]"> <!-- image grid -->
+                                    <img class="col-span-2 row-span-2 h-[200px] object-cover rounded-sm"
+                                        src="/images/image1.jpg" alt="">
+                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image2.jpg" alt="">
+                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image3.jpg" alt="">
+                                </div>
+                                <!-- count -->
+                                <div class="absolute right-5 top-5 bg-black/50 text-white rounded-full py-1 px-2"> <!-- count -->
+                                    <i class="fa-solid fa-image"></i>
+                                    <span class="font-semibold">45</span>
+                                </div>
+                            </div>
+                            <div class="py-2"> <!-- detail texts-->
+                                <p>Listing title</p>
+                                <span>*****</span> <span>1400 reviews</span> <span>Featured</span>
+                                <p>address</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- swiper-wrapper -->
+            <!-- swiper navigation -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <br><br><br>
+
+
+    <div class="ud-single-banner relative">
+        <!-- gallery container -->
+        <div>
+            <div class="swiper ud-banner-slider"> <!-- swiper main -->
+                <div class="swiper-wrapper"> <!-- swiper wrapper -->
+                    <div class="swiper-slide">
+                        <div class="grid grid-cols-3 grid-rows-2 gap-[6px] h-[406px]"> <!-- image grid -->
+                            <img class="h-[406px] object-cover rounded-md w-full col-span-2 row-span-2"
+                                src="/images/image1.jpg" alt="">
+                            <img class="h-[200px] object-cover rounded-md w-full" src="/images/image2.jpg" alt="">
+                            <img class="h-[200px] object-cover rounded-md w-full" src="/images/image3.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="grid grid-cols-3 grid-rows-2 gap-[6px] h-[406px]"> <!-- image grid -->
+                            <img class="h-[406px] object-cover rounded-md w-full col-span-2 row-span-2"
+                                src="/images/image1.jpg" alt="">
+                            <img class="h-[200px] object-cover rounded-md w-full" src="/images/image2.jpg" alt="">
+                            <img class="h-[200px] object-cover rounded-md w-full" src="/images/image3.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="grid grid-cols-3 grid-rows-2 gap-[6px] h-[406px]"> <!-- image grid -->
+                            <img class="h-[406px] object-cover rounded-md w-full col-span-2 row-span-2"
+                                src="/images/image1.jpg" alt="">
+                            <img class="h-[200px] object-cover rounded-md w-full" src="/images/image2.jpg" alt="">
+                            <img class="h-[200px] object-cover rounded-md w-full" src="/images/image3.jpg" alt="">
+                        </div>
+                    </div>
+                </div> <!-- swiper wrapper -->
+                <!-- swiper navigation -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+        <!-- overlay -->
+        <div class="absolute bottom-0 z-10 w-full p-5 bg-black/50 text-white rounded-md"> <!-- overlay data -->
+            <h1>Listing title</h1>
+            <div class="flex justify-between items-end">
+                <div> <!-- left -->
+                    <p>review ratting</p>
+                    <p>Business hour</p>
+                    <p>category</p>
+                </div>
+                <div> <!-- left -->
+                    action buttons
+                </div>
+            </div>
+        </div>
+
+        <!-- count -->
+        <div class="absolute right-5 top-5 bg-black/50 text-white rounded-full py-1 px-2" style="z-index: 10;"> <!-- count -->
+            <i class="fa-solid fa-image"></i>
+            <span class="font-semibold">45</span>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="ud-nav-slider-container">
+        <div class="swiper ud-nav-slider"> <!-- swiper main -->
+            <div class="swiper-wrapper py-5"> <!-- swiper wrapper -->
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+                <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
+                    <span class="font-semibold text-dark">item</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br><br>
+
+    <div class="ud-listing-bar translate-y-[0%] duration-[0.3s] absolute w-full left-0">
+        <div class="flex flex-col gap-5 lg:flex-row justify-between items-center p-3 bg-black/50">
+            <div class="text-white text-2xl font-semibold lg:text-3xl lg:font-bold">
+                <h1>Listing title</h1>
+            </div>
+            <div class="ud-action-buttons flex gap-5">
+                <div
+                    class="flex gap-2 items-center text-white font-semibold bg-black py-1 px-3 rounded-lg cursor-pointer">
+                    <i class="fa-solid fa-phone"></i> <span>Phone</span>
+                </div>
+                <div
+                    class="flex gap-2 items-center text-white font-semibold bg-black py-1 px-3 rounded-lg cursor-pointer">
+                    <i class="fa-solid fa-image"></i> <span>Photos</span>
+                </div>
+                <div
+                    class="flex gap-2 items-center text-white font-semibold bg-black py-1 px-3 rounded-lg cursor-pointer">
+                    <i class="fa-solid fa-medal"></i> <span>Reviews</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+    <script>
+        const swiper_listing = new Swiper(".ud-listing-slider", {
+            slidesPerView: 1.2,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                499: {
+                    slidesPerView: 2.2,
+                    spaceBetween: 20
+                },
+                749: {
+                    slidesPerView: 3.2,
+                    spaceBetween: 20
+                },
+                1000: {
+                    slidesPerView: 4.2,
+                    spaceBetween: 20
+                }
+            }
+        });
+
+        const swiper_banner = new Swiper(".ud-banner-slider", {
+            slidesPerView: 1.2,
+            spaceBetween: 6,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        const swiper_nav = new Swiper(".ud-nav-slider", {
+            slidesPerView: "auto",
+            spaceBetween: 10,
+            freeMode: true,
+            grabCursor: true,
+        });
+    </script>
+
 </body>
+
 </html>
