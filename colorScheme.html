@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Scheme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #f1f5f9;
+            --secondary-color: #4338ca;
+            --light-color: #94a3b8;
+            --dark-color: #0f172a;
+
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+
+
+        }
+
+        body {
+            font-family: "Josefin Sans", sans-serif;
+            font-optical-sizing: auto;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-color);
+        }
+
+        .color-scheme {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+
+        h2 {
+            padding: 10px;
+            text-align: center;
+            background-color: var(--light-color2);
+        }
+
+        span {
+            color: var(--secondary-color);
+        }
+
+        .color-box {
+            padding: 20px;
+            border-radius: 5px;
+            color: var(--light-color);
+            text-align: center;
+        }
+
+        .primary {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        .secondary {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .light {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+
+
+        .dark {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Color Scheme for <span>Ultimate</span>Directory</h2>
+    <div class="color-scheme">
+        <div class="color-box primary">Primary</div>
+        <div class="color-box secondary">Secondary</div>
+        <div class="color-box light">Light</div>
+        <div class="color-box dark">Dark</div>
+    </div>
+</body>
+
+</html>

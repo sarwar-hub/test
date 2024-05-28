@@ -14,22 +14,116 @@
 
 <body class="max-w-[1200px] m-auto">
 
-    <div class="ud-archive-item"> <!-- archive item wrapper desktop -->
-        <div class="flex gap-5 bg-secodary/10 shadow-lg">
-            <div class="relative"> <!-- image -->
-                <div class="grid grid-cols-3 grid-rows-2 gap-[4px] h-[250px] max-w-[350px]"> <!-- image grid -->
-                    <img class="col-span-2 row-span-2 h-[250px] object-cover rounded-sm" src="/images/image1.jpg"
+
+
+    <!-- single listing actions - desktop -->
+    <div class="ud-listing-actions-desktop">
+        <div class="flex gap-3">
+            <a href="#" class="font-semibold text-ud-dark space-x-1">
+                <i class="fa-solid fa-phone"></i>
+                <span>209-525-3611</span>
+            </a>
+            <a href="#" class="font-semibold text-ud-dark space-x-1">
+                <i class="fa-solid fa-directions"></i>
+                <span>Direction</span>
+            </a>
+            <a href="#" class="font-semibold text-ud-dark space-x-1">
+                <i class="fa-solid fa-globe-americas"></i>
+                <span>Website</span>
+            </a>
+            <a href="#" class="font-semibold text-ud-dark space-x-1">
+                <i class="fa-solid fa-medal"></i>
+                <span>Reviews</span>
+            </a>
+        </div>
+    </div>
+
+
+
+
+    <!-- single listing actions - mobile -->
+    <div class="ud-listing-actions-mobile">
+        <div class="flex gap-3">
+            <a href="#" class="flex flex-col justify-center items-center font-semibold text-ud-dark space-x-1 w-[80px]">
+                <div
+                    class="flex justify-center items-center border-[1px] border-black rounded-full w-[50px] h-[50px] text-ud-pri bg-secodary/10 border-ud-pri text-xl">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <span>Call</span>
+            </a>
+            <a href="#" class="flex flex-col justify-center items-center font-semibold text-ud-dark space-x-1 w-[80px]">
+                <div
+                    class="flex justify-center items-center border-[1px] border-black rounded-full w-[50px] h-[50px] text-ud-pri bg-secodary/10 border-ud-pri text-xl">
+                    <i class="fa-solid fa-globe-americas"></i>
+                </div>
+                <span>Website</span>
+            </a>
+            <a href="#" class="flex flex-col justify-center items-center font-semibold text-ud-dark space-x-1 w-[80px]">
+                <div
+                    class="flex justify-center items-center border-[1px] border-black rounded-full w-[50px] h-[50px] text-ud-pri bg-secodary/10 border-ud-pri text-xl">
+                    <i class="fa-solid fa-directions"></i>
+                </div>
+                <span>Direction</span>
+            </a>
+            <a href="#" class="flex flex-col justify-center items-center font-semibold text-ud-dark space-x-1 w-[80px]">
+                <div
+                    class="flex justify-center items-center border-[1px] border-black rounded-full w-[50px] h-[50px] text-ud-pri bg-secodary/10 border-ud-pri text-xl">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <span>Reviews</span>
+            </a>
+        </div>
+    </div>
+
+
+
+    <div class="ud-listing-reviews-wrapper">
+        <div class="ud-listing reviews">
+            <!-- user info -->
+            <div class="flex gap-2 items-end">
+                <div class=" h-[70px] w-[70px]">
+                    <img class="h-full w-full rounded-full object-cover"
+                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="">
-                    <img class="h-[123px] object-cover rounded-sm" src="/images/image2.jpg" alt="">
-                    <img class="h-[123px] object-cover rounded-sm" src="/images/image3.jpg" alt="">
+                </div>
+                <div class="py-1">
+                    <h4 class="text-ud-dark">name</h4>
+                    <span>ratting star</span>
+                </div>
+            </div>
+            <!-- review content -->
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est modi optio exercitationem, dicta
+                    natus sint sapiente sunt perferendis autem.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ud-archive-item"> <!-- archive item wrapper desktop -->
+        <div class="flex gap-2 md:gap-5 bg-ud-sec/10 text-ud-ud-dark shadow-lg">
+            <div class="relative"> <!-- image -->
+                <div
+                    class="grid grid-cols-3 grid-rows-2 gap-[1px] md:gap-[2px] h-[100px] md:h-[250px] max-w-[100px] md:max-w-[350px]">
+                    <!-- image grid -->
+                    <img class="col-span-2 row-span-2 h-full object-cover rounded-sm"
+                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <img class="h-full object-cover rounded-sm"
+                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <img class="h-full object-cover rounded-sm"
+                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
                 </div>
                 <!-- count -->
-                <div class="absolute right-5 top-5 bg-black/50 text-white rounded-full py-1 px-2"> <!-- count -->
+                <div
+                    class="absolute right-1 md:right-5 top-1 md:top-5 bg-black/50 text-ud-pri text-sm md:text-md rounded-full py-1 px-2">
+                    <!-- count -->
                     <i class="fa-solid fa-image"></i>
                     <span class="font-semibold">45</span>
                 </div>
             </div>
-            <div> <!-- detail texts-->
+            <div class="hidden md:block"> <!-- detail texts desktop -->
                 <div> <!-- top -->
                     <p>Listing title</p>
                     <span>*****</span> <span>1400 reviews</span> <span>Featured</span>
@@ -40,7 +134,15 @@
                     <p>Address, addressm address</p>
                 </div>
                 <div> <!-- bottom -->
-                    <p>Category</p>
+                    
+                </div>
+            </div>
+            <div class="block md:hidden"> <!-- detail texts mobile -->
+                <div class="text-xs">
+                    <p>Location</p>
+                    <h3>Listing title</h3>
+                    <span>*****</span> <span>1400 reviews</span> <span>Featured</span>
+                    <span>Category</span>
                 </div>
             </div>
         </div>
@@ -53,16 +155,22 @@
             <div class="swiper-wrapper"> <!-- swiper wrapper -->
                 <div class="swiper-slide"> <!-- slide item -->
                     <div class="ud-archive-item-slider">
-                        <div class="flex flex-col gap-2 bg-secondary/10 shadow-md">
+                        <div class="flex flex-col gap-2 bg-ud-pri/10 shadow-md">
                             <div class="relative"> <!-- image -->
                                 <div class="grid grid-cols-3 grid-rows-2 gap-[4px] h-[200px]"> <!-- image grid -->
                                     <img class="col-span-2 row-span-2 h-[200px] object-cover rounded-sm"
-                                        src="/images/image1.jpg" alt="">
-                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image2.jpg" alt="">
-                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image3.jpg" alt="">
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
+                                    <img class="h-[98px] object-cover rounded-sm"
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
+                                    <img class="h-[98px] object-cover rounded-sm"
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
                                 </div>
                                 <!-- count -->
-                                <div class="absolute right-5 top-5 bg-black/50 text-white rounded-full py-1 px-2"> <!-- count -->
+                                <div class="absolute right-5 top-5 bg-black/50 text-ud-pri rounded-full py-1 px-2">
+                                    <!-- count -->
                                     <i class="fa-solid fa-image"></i>
                                     <span class="font-semibold">45</span>
                                 </div>
@@ -77,16 +185,22 @@
                 </div>
                 <div class="swiper-slide"> <!-- slide item -->
                     <div class="ud-archive-item-slider">
-                        <div class="flex flex-col gap-2 bg-secondary/10 shadow-md">
+                        <div class="flex flex-col gap-2 bg-ud-pri/10 shadow-md">
                             <div class="relative"> <!-- image -->
                                 <div class="grid grid-cols-3 grid-rows-2 gap-[4px] h-[200px]"> <!-- image grid -->
                                     <img class="col-span-2 row-span-2 h-[200px] object-cover rounded-sm"
-                                        src="/images/image1.jpg" alt="">
-                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image2.jpg" alt="">
-                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image3.jpg" alt="">
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
+                                    <img class="h-[98px] object-cover rounded-sm"
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
+                                    <img class="h-[98px] object-cover rounded-sm"
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
                                 </div>
                                 <!-- count -->
-                                <div class="absolute right-5 top-5 bg-black/50 text-white rounded-full py-1 px-2"> <!-- count -->
+                                <div class="absolute right-5 top-5 bg-black/50 text-ud-pri rounded-full py-1 px-2">
+                                    <!-- count -->
                                     <i class="fa-solid fa-image"></i>
                                     <span class="font-semibold">45</span>
                                 </div>
@@ -101,16 +215,22 @@
                 </div>
                 <div class="swiper-slide"> <!-- slide item -->
                     <div class="ud-archive-item-slider">
-                        <div class="flex flex-col gap-2 bg-secondary/10 shadow-md">
+                        <div class="flex flex-col gap-2 bg-ud-pri/10 shadow-md">
                             <div class="relative"> <!-- image -->
                                 <div class="grid grid-cols-3 grid-rows-2 gap-[4px] h-[200px]"> <!-- image grid -->
                                     <img class="col-span-2 row-span-2 h-[200px] object-cover rounded-sm"
-                                        src="/images/image1.jpg" alt="">
-                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image2.jpg" alt="">
-                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image3.jpg" alt="">
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
+                                    <img class="h-[98px] object-cover rounded-sm"
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
+                                    <img class="h-[98px] object-cover rounded-sm"
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
                                 </div>
                                 <!-- count -->
-                                <div class="absolute right-5 top-5 bg-black/50 text-white rounded-full py-1 px-2"> <!-- count -->
+                                <div class="absolute right-5 top-5 bg-black/50 text-ud-pri rounded-full py-1 px-2">
+                                    <!-- count -->
                                     <i class="fa-solid fa-image"></i>
                                     <span class="font-semibold">45</span>
                                 </div>
@@ -125,16 +245,22 @@
                 </div>
                 <div class="swiper-slide"> <!-- slide item -->
                     <div class="ud-archive-item-slider">
-                        <div class="flex flex-col gap-2 bg-secondary/10 shadow-md">
+                        <div class="flex flex-col gap-2 bg-ud-pri/10 shadow-md">
                             <div class="relative"> <!-- image -->
                                 <div class="grid grid-cols-3 grid-rows-2 gap-[4px] h-[200px]"> <!-- image grid -->
                                     <img class="col-span-2 row-span-2 h-[200px] object-cover rounded-sm"
-                                        src="/images/image1.jpg" alt="">
-                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image2.jpg" alt="">
-                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image3.jpg" alt="">
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
+                                    <img class="h-[98px] object-cover rounded-sm"
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
+                                    <img class="h-[98px] object-cover rounded-sm"
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
                                 </div>
                                 <!-- count -->
-                                <div class="absolute right-5 top-5 bg-black/50 text-white rounded-full py-1 px-2"> <!-- count -->
+                                <div class="absolute right-5 top-5 bg-black/50 text-ud-pri rounded-full py-1 px-2">
+                                    <!-- count -->
                                     <i class="fa-solid fa-image"></i>
                                     <span class="font-semibold">45</span>
                                 </div>
@@ -149,16 +275,22 @@
                 </div>
                 <div class="swiper-slide"> <!-- slide item -->
                     <div class="ud-archive-item-slider">
-                        <div class="flex flex-col gap-2 bg-secondary/10 shadow-md">
+                        <div class="flex flex-col gap-2 bg-ud-pri/10 shadow-md">
                             <div class="relative"> <!-- image -->
                                 <div class="grid grid-cols-3 grid-rows-2 gap-[4px] h-[200px]"> <!-- image grid -->
                                     <img class="col-span-2 row-span-2 h-[200px] object-cover rounded-sm"
-                                        src="/images/image1.jpg" alt="">
-                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image2.jpg" alt="">
-                                    <img class="h-[98px] object-cover rounded-sm" src="/images/image3.jpg" alt="">
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
+                                    <img class="h-[98px] object-cover rounded-sm"
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
+                                    <img class="h-[98px] object-cover rounded-sm"
+                                        src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="">
                                 </div>
                                 <!-- count -->
-                                <div class="absolute right-5 top-5 bg-black/50 text-white rounded-full py-1 px-2"> <!-- count -->
+                                <div class="absolute right-5 top-5 bg-black/50 text-ud-pri rounded-full py-1 px-2">
+                                    <!-- count -->
                                     <i class="fa-solid fa-image"></i>
                                     <span class="font-semibold">45</span>
                                 </div>
@@ -189,25 +321,40 @@
                     <div class="swiper-slide">
                         <div class="grid grid-cols-3 grid-rows-2 gap-[6px] h-[406px]"> <!-- image grid -->
                             <img class="h-[406px] object-cover rounded-md w-full col-span-2 row-span-2"
-                                src="/images/image1.jpg" alt="">
-                            <img class="h-[200px] object-cover rounded-md w-full" src="/images/image2.jpg" alt="">
-                            <img class="h-[200px] object-cover rounded-md w-full" src="/images/image3.jpg" alt="">
+                                src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="">
+                            <img class="h-[200px] object-cover rounded-md w-full"
+                                src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="">
+                            <img class="h-[200px] object-cover rounded-md w-full"
+                                src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="grid grid-cols-3 grid-rows-2 gap-[6px] h-[406px]"> <!-- image grid -->
                             <img class="h-[406px] object-cover rounded-md w-full col-span-2 row-span-2"
-                                src="/images/image1.jpg" alt="">
-                            <img class="h-[200px] object-cover rounded-md w-full" src="/images/image2.jpg" alt="">
-                            <img class="h-[200px] object-cover rounded-md w-full" src="/images/image3.jpg" alt="">
+                                src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="">
+                            <img class="h-[200px] object-cover rounded-md w-full"
+                                src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="">
+                            <img class="h-[200px] object-cover rounded-md w-full"
+                                src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="grid grid-cols-3 grid-rows-2 gap-[6px] h-[406px]"> <!-- image grid -->
                             <img class="h-[406px] object-cover rounded-md w-full col-span-2 row-span-2"
-                                src="/images/image1.jpg" alt="">
-                            <img class="h-[200px] object-cover rounded-md w-full" src="/images/image2.jpg" alt="">
-                            <img class="h-[200px] object-cover rounded-md w-full" src="/images/image3.jpg" alt="">
+                                src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="">
+                            <img class="h-[200px] object-cover rounded-md w-full"
+                                src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="">
+                            <img class="h-[200px] object-cover rounded-md w-full"
+                                src="https://images.unsplash.com/photo-1583853168794-485e809166d7?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="">
                         </div>
                     </div>
                 </div> <!-- swiper wrapper -->
@@ -218,7 +365,7 @@
         </div>
 
         <!-- overlay -->
-        <div class="absolute bottom-0 z-10 w-full p-5 bg-black/50 text-white rounded-md"> <!-- overlay data -->
+        <div class="absolute bottom-0 z-10 w-full p-5 bg-black/50 text-ud-pri rounded-md"> <!-- overlay data -->
             <h1>Listing title</h1>
             <div class="flex justify-between items-end">
                 <div> <!-- left -->
@@ -233,7 +380,8 @@
         </div>
 
         <!-- count -->
-        <div class="absolute right-5 top-5 bg-black/50 text-white rounded-full py-1 px-2" style="z-index: 10;"> <!-- count -->
+        <div class="absolute right-5 top-5 bg-black/50 text-ud-pri rounded-full py-1 px-2" style="z-index: 10;">
+            <!-- count -->
             <i class="fa-solid fa-image"></i>
             <span class="font-semibold">45</span>
         </div>
@@ -245,100 +393,100 @@
         <div class="swiper ud-nav-slider"> <!-- swiper main -->
             <div class="swiper-wrapper py-5"> <!-- swiper wrapper -->
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
                 <div class="swiper-slide w-auto py-1 px-2 rounded-xl shadow-lg">
-                    <span class="font-semibold text-dark">item</span>
+                    <span class="font-semibold text-ud-dark">item</span>
                 </div>
             </div>
         </div>
@@ -346,22 +494,22 @@
 
     <br><br><br><br><br>
 
-    <div class="ud-listing-bar translate-y-[0%] duration-[0.3s] absolute w-full left-0">
+    <div class="ud-listing-bar translate-y-[0%] duration-[0.3s] fixed w-full left-0 bottom-0">
         <div class="flex flex-col gap-5 lg:flex-row justify-between items-center p-3 bg-black/50">
-            <div class="text-white text-2xl font-semibold lg:text-3xl lg:font-bold">
+            <div class="text-ud-pri text-2xl font-semibold lg:text-3xl lg:font-bold">
                 <h1>Listing title</h1>
             </div>
             <div class="ud-action-buttons flex gap-5">
                 <div
-                    class="flex gap-2 items-center text-white font-semibold bg-black py-1 px-3 rounded-lg cursor-pointer">
+                    class="flex gap-2 items-center text-ud-pri font-semibold bg-black py-1 px-3 rounded-lg cursor-pointer">
                     <i class="fa-solid fa-phone"></i> <span>Phone</span>
                 </div>
                 <div
-                    class="flex gap-2 items-center text-white font-semibold bg-black py-1 px-3 rounded-lg cursor-pointer">
+                    class="flex gap-2 items-center text-ud-pri font-semibold bg-black py-1 px-3 rounded-lg cursor-pointer">
                     <i class="fa-solid fa-image"></i> <span>Photos</span>
                 </div>
                 <div
-                    class="flex gap-2 items-center text-white font-semibold bg-black py-1 px-3 rounded-lg cursor-pointer">
+                    class="flex gap-2 items-center text-ud-pri font-semibold bg-black py-1 px-3 rounded-lg cursor-pointer">
                     <i class="fa-solid fa-medal"></i> <span>Reviews</span>
                 </div>
             </div>
