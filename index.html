@@ -1,70 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>LightGallery Example</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery-bundle.min.css">
+
     <style>
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            box-shadow: 0 0 10px white;
-            animation: twinkle 1.5s infinite ease-in-out;
+        .gallery {
+            display: flex;
+            gap: 10px;
         }
-
-        @keyframes twinkle {
-
-            0%,
-            100% {
-                opacity: 0.3;
-            }
-
-            50% {
-                opacity: 1;
-            }
+        .gallery a{
+            width: 200px;
+            height: 200px;
+            display: block;
+        }
+        .gallery a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
+<body>
+<a class="bg-slate-900/50 text-white p-2 hover:underline fixed top-0 left-0" href="/">← Back to HOME</a>
 
-<body class="font-mono bg-slate-900">
 
-    <div class="relative h-screen w-full">
-        <header class="p-10 text-white text-5xl text-center">
-            test components
-        </header>
-        <hr>
-        <div id="star-container" class="absolute inset-0 overflow-hidden"></div>
-        <div class="flex justify-center gap-10 flex-wrap text-gray-300 mt-10">
-            <a href="/lightgallery.html" class="bg-slate-700/50 p-5 border-l-2 border-gray-400 hover:border-l-2 hover:border-white z-10">light box</a>
-        </div>
-    </div>
+<main class="flex justify-center items-center h-[100vh]">
 
 
 
 
-    <script>
-        const starContainer = document.getElementById('star-container');
-    
-        function createStar() {
-            const star = document.createElement('div');
-            const size = Math.random() * 3 + 1; // Star size between 1px and 4px
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            star.style.top = `${Math.random() * 100}%`;
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.animationDelay = `${Math.random() * 2}s`;
-            star.classList.add('star');
-            starContainer.appendChild(star);
-        }
-    
-        for (let i = 0; i < 100; i++) {
-            createStar();
-        }
-    </script>
 
+
+
+
+
+<!-- Your images here -->
+<div class="gallery">
+    <a href="/images/image1.jpg">
+        <img src="/images/image1.jpg" alt="Image 1">
+    </a>
+    <a href="/images/image2.jpg">
+        <img src="/images/image2.jpg" alt="Image 2">
+    </a>
+    <a href="/images/image3.jpg">
+        <img src="/images/image3.jpg" alt="Image 3">
+    </a>
+</div>
+
+
+
+
+
+
+
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0/plugins/autoplay/lg-autoplay.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0/plugins/fullscreen/lg-fullscreen.min.js"></script>
+
+<script>
+    // JavaScript to initialize LightGallery
+    document.addEventListener("DOMContentLoaded", function() {
+        const galleryItems = document.querySelectorAll('.gallery a');
+        const galleryArray = Array.from(galleryItems);
+
+        // Initialize LightGallery on the gallery container
+        lightGallery(document.querySelector('.gallery'), {
+            plugins: [lgZoom, lgAutoplay, lgFullscreen]
+        });
+    });
+</script>
 </body>
-
 </html>
