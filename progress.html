@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Progress Bar</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .progress-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .progress-circle {
+            transform: rotate(-45deg);
+            transform-origin: 50% 50%;
+        }
+
+        .bg-circle {
+            fill: #d3d3d3;
+            stroke: none;
+            stroke-width: 20;
+            opacity: 0.15;
+        }
+
+        .progress-circle {
+            fill: none;
+            stroke-width: 20;
+            stroke-dasharray: 565.48;
+            stroke-dashoffset: 565.48;
+            transition: stroke-dashoffset 1s, stroke 1s;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <svg class="progress-circle" width="200" height="200" viewBox="0 0 200 200">
+            <circle class="bg-circle" cx="100" cy="100" r="90"/>
+            <circle class="progress-circle" cx="100" cy="100" r="90"/>
+        </svg>
+        <div class="progress-text">0%</div>
+    </div>
+    <script>
+        function setProgress(progress) {
+            const progressCircle = document.querySelector('.progress-circle .progress-circle');
+            const bgCircle = document.querySelector('.progress-circle .bg-circle');
+            const progressText = document.querySelector('.progress-text');
+            const radius = 90;
+            const circumference = 2 * Math.PI * radius;
+            
+            let color;
+            if (progress >= 0 && progress <= 25) {
+                color = 'rgb(218 30 11)';
+            } else if (progress >= 26 && progress <= 50) {
+                color = '#f39c12';
+            } else if (progress >= 51 && progress <= 75) {
+                color = '#2980b9';
+            } else if (progress >= 76 && progress <= 100) {
+                color = '#2ecc71';
+            }
+
+            const offset = circumference - (progress / 100) * circumference;
+            progressCircle.style.stroke = color;
+            bgCircle.style.fill = color;
+            progressText.style.color = color;
+            progressText.style.fontFamily = 'arial';
+            progressCircle.style.strokeDashoffset = offset;
+            progressText.textContent = `${progress}%`;
+        }
+
+        setProgress(76);
+    </script>
+</body>
+</html>

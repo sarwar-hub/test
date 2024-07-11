@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table of Contents</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> <!-- no need to incluse this -->
+    
+    <!-- custom css -->
+    <style>
+        .bpm-toc-link {
+            color: #007bff;
+            font-weight: 500;
+            padding: 5px 10px;
+            font-weight: bold;
+            transition: .2s ease-in-out;
+        }
+        .bpm-toc-link:hover {
+            color: #0056b3;
+            background-color: lightblue;
+            text-decoration: none;
+        }
+        .toc-active {
+            color: #565656;
+            background-color: lightblue;
+        }
+        .bpm-toc-container {
+            background-color: #ffffff;
+            border: 1px solid #42a0bf;
+            border-radius: 5px;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- main layout -->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- articles -->
+            <div class="col-lg-12 col-xl-8">
+                <div id="post1" class="bpm-article-item"><h2>Post 1 Title</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nemo porro eum error, molestiae neque enim at excepturi adipisci. Quam possimus dolore quod quo esse recusandae cumque! Quod architecto nulla deserunt eum tempora libero dolores. Assumenda ab rerum nobis quia dolor ad praesentium dolorem aspernatur, minus nostrum, temporibus tempora esse non adipisci fuga et dignissimos saepe nemo dolores iure? Unde eum blanditiis maxime molestias. Id provident nam vel cumque aperiam. Ea sunt repudiandae eaque ad laboriosam velit tenetur optio assumenda, sapiente tempora quasi voluptatum deserunt facilis. Autem debitis expedita nostrum facilis quis exercitationem odit optio. Itaque et veritatis animi a, aspernatur debitis? Obcaecati, qui at consequatur veniam neque recusandae commodi esse, explicabo, quia atque voluptatem laboriosam. Modi eius architecto, neque atque, quas eum, eligendi officiis reprehenderit ex illo saepe nobis. Ipsa quis, molestias eaque atque fuga mollitia soluta sapiente sit aspernatur fugiat labore, quae rerum quaerat voluptates nesciunt cupiditate nisi dicta cumque quia quidem nihil temporibus delectus quo suscipit. Placeat vitae voluptatem inventore, molestiae quis quaerat nobis doloribus reiciendis ut esse omnis expedita officiis, cumque, voluptates nostrum libero minus! Consequatur fugiat id dolor quae doloremque est esse beatae, totam accusantium ratione fuga. Provident, magnam reprehenderit! Autem numquam aliquid vitae quae?</p></div>
+                <div id="post2" class="bpm-article-item"><h2>Post 2 Title</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nemo porro eum error, molestiae neque enim at excepturi adipisci. Quam possimus dolore quod quo esse recusandae cumque! Quod architecto nulla deserunt eum tempora libero dolores. Assumenda ab rerum nobis quia dolor ad praesentium dolorem aspernatur, minus nostrum, temporibus tempora esse non adipisci fuga et dignissimos saepe nemo dolores iure? Unde eum blanditiis maxime molestias. Id provident nam vel cumque aperiam. Ea sunt repudiandae eaque ad laboriosam velit tenetur optio assumenda, sapiente tempora quasi voluptatum deserunt facilis. Autem debitis expedita nostrum facilis quis exercitationem odit optio. Itaque et veritatis animi a, aspernatur debitis? Obcaecati, qui at consequatur veniam neque recusandae commodi esse, explicabo, quia atque voluptatem laboriosam. Modi eius architecto, neque atque, quas eum, eligendi officiis reprehenderit ex illo saepe nobis. Ipsa quis, molestias eaque atque fuga mollitia soluta sapiente sit aspernatur fugiat labore, quae rerum quaerat voluptates nesciunt cupiditate nisi dicta cumque quia quidem nihil temporibus delectus quo suscipit. Placeat vitae voluptatem inventore, molestiae quis quaerat nobis doloribus reiciendis ut esse omnis expedita officiis, cumque, voluptates nostrum libero minus! Consequatur fugiat id dolor quae doloremque est esse beatae, totam accusantium ratione fuga. Provident, magnam reprehenderit! Autem numquam aliquid vitae quae?</p></div>
+                <div id="post3" class="bpm-article-item"><h2>Post 3 Title</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nemo porro eum error, molestiae neque enim at excepturi adipisci. Quam possimus dolore quod quo esse recusandae cumque! Quod architecto nulla deserunt eum tempora libero dolores. Assumenda ab rerum nobis quia dolor ad praesentium dolorem aspernatur, minus nostrum, temporibus tempora esse non adipisci fuga et dignissimos saepe nemo dolores iure? Unde eum blanditiis maxime molestias. Id provident nam vel cumque aperiam. Ea sunt repudiandae eaque ad laboriosam velit tenetur optio assumenda, sapiente tempora quasi voluptatum deserunt facilis. Autem debitis expedita nostrum facilis quis exercitationem odit optio. Itaque et veritatis animi a, aspernatur debitis? Obcaecati, qui at consequatur veniam neque recusandae commodi esse, explicabo, quia atque voluptatem laboriosam. Modi eius architecto, neque atque, quas eum, eligendi officiis reprehenderit ex illo saepe nobis. Ipsa quis, molestias eaque atque fuga mollitia soluta sapiente sit aspernatur fugiat labore, quae rerum quaerat voluptates nesciunt cupiditate nisi dicta cumque quia quidem nihil temporibus delectus quo suscipit. Placeat vitae voluptatem inventore, molestiae quis quaerat nobis doloribus reiciendis ut esse omnis expedita officiis, cumque, voluptates nostrum libero minus! Consequatur fugiat id dolor quae doloremque est esse beatae, totam accusantium ratione fuga. Provident, magnam reprehenderit! Autem numquam aliquid vitae quae?</p></div>
+                <div id="post4" class="bpm-article-item"><h2>Post 4 Title</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nemo porro eum error, molestiae neque enim at excepturi adipisci. Quam possimus dolore quod quo esse recusandae cumque! Quod architecto nulla deserunt eum tempora libero dolores. Assumenda ab rerum nobis quia dolor ad praesentium dolorem aspernatur, minus nostrum, temporibus tempora esse non adipisci fuga et dignissimos saepe nemo dolores iure? Unde eum blanditiis maxime molestias. Id provident nam vel cumque aperiam. Ea sunt repudiandae eaque ad laboriosam velit tenetur optio assumenda, sapiente tempora quasi voluptatum deserunt facilis. Autem debitis expedita nostrum facilis quis exercitationem odit optio. Itaque et veritatis animi a, aspernatur debitis? Obcaecati, qui at consequatur veniam neque recusandae commodi esse, explicabo, quia atque voluptatem laboriosam. Modi eius architecto, neque atque, quas eum, eligendi officiis reprehenderit ex illo saepe nobis. Ipsa quis, molestias eaque atque fuga mollitia soluta sapiente sit aspernatur fugiat labore, quae rerum quaerat voluptates nesciunt cupiditate nisi dicta cumque quia quidem nihil temporibus delectus quo suscipit. Placeat vitae voluptatem inventore, molestiae quis quaerat nobis doloribus reiciendis ut esse omnis expedita officiis, cumque, voluptates nostrum libero minus! Consequatur fugiat id dolor quae doloremque est esse beatae, totam accusantium ratione fuga. Provident, magnam reprehenderit! Autem numquam aliquid vitae quae?</p></div>
+                <div id="post5" class="bpm-article-item"><h2>Post 5 Title</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nemo porro eum error, molestiae neque enim at excepturi adipisci. Quam possimus dolore quod quo esse recusandae cumque! Quod architecto nulla deserunt eum tempora libero dolores. Assumenda ab rerum nobis quia dolor ad praesentium dolorem aspernatur, minus nostrum, temporibus tempora esse non adipisci fuga et dignissimos saepe nemo dolores iure? Unde eum blanditiis maxime molestias. Id provident nam vel cumque aperiam. Ea sunt repudiandae eaque ad laboriosam velit tenetur optio assumenda, sapiente tempora quasi voluptatum deserunt facilis. Autem debitis expedita nostrum facilis quis exercitationem odit optio. Itaque et veritatis animi a, aspernatur debitis? Obcaecati, qui at consequatur veniam neque recusandae commodi esse, explicabo, quia atque voluptatem laboriosam. Modi eius architecto, neque atque, quas eum, eligendi officiis reprehenderit ex illo saepe nobis. Ipsa quis, molestias eaque atque fuga mollitia soluta sapiente sit aspernatur fugiat labore, quae rerum quaerat voluptates nesciunt cupiditate nisi dicta cumque quia quidem nihil temporibus delectus quo suscipit. Placeat vitae voluptatem inventore, molestiae quis quaerat nobis doloribus reiciendis ut esse omnis expedita officiis, cumque, voluptates nostrum libero minus! Consequatur fugiat id dolor quae doloremque est esse beatae, totam accusantium ratione fuga. Provident, magnam reprehenderit! Autem numquam aliquid vitae quae?</p></div>
+                <div id="post6" class="bpm-article-item"><h2>Post 6 Title</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nemo porro eum error, molestiae neque enim at excepturi adipisci. Quam possimus dolore quod quo esse recusandae cumque! Quod architecto nulla deserunt eum tempora libero dolores. Assumenda ab rerum nobis quia dolor ad praesentium dolorem aspernatur, minus nostrum, temporibus tempora esse non adipisci fuga et dignissimos saepe nemo dolores iure? Unde eum blanditiis maxime molestias. Id provident nam vel cumque aperiam. Ea sunt repudiandae eaque ad laboriosam velit tenetur optio assumenda, sapiente tempora quasi voluptatum deserunt facilis. Autem debitis expedita nostrum facilis quis exercitationem odit optio. Itaque et veritatis animi a, aspernatur debitis? Obcaecati, qui at consequatur veniam neque recusandae commodi esse, explicabo, quia atque voluptatem laboriosam. Modi eius architecto, neque atque, quas eum, eligendi officiis reprehenderit ex illo saepe nobis. Ipsa quis, molestias eaque atque fuga mollitia soluta sapiente sit aspernatur fugiat labore, quae rerum quaerat voluptates nesciunt cupiditate nisi dicta cumque quia quidem nihil temporibus delectus quo suscipit. Placeat vitae voluptatem inventore, molestiae quis quaerat nobis doloribus reiciendis ut esse omnis expedita officiis, cumque, voluptates nostrum libero minus! Consequatur fugiat id dolor quae doloremque est esse beatae, totam accusantium ratione fuga. Provident, magnam reprehenderit! Autem numquam aliquid vitae quae?</p></div>
+                <div id="post7" class="bpm-article-item"><h2>Post 7 Title</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nemo porro eum error, molestiae neque enim at excepturi adipisci. Quam possimus dolore quod quo esse recusandae cumque! Quod architecto nulla deserunt eum tempora libero dolores. Assumenda ab rerum nobis quia dolor ad praesentium dolorem aspernatur, minus nostrum, temporibus tempora esse non adipisci fuga et dignissimos saepe nemo dolores iure? Unde eum blanditiis maxime molestias. Id provident nam vel cumque aperiam. Ea sunt repudiandae eaque ad laboriosam velit tenetur optio assumenda, sapiente tempora quasi voluptatum deserunt facilis. Autem debitis expedita nostrum facilis quis exercitationem odit optio. Itaque et veritatis animi a, aspernatur debitis? Obcaecati, qui at consequatur veniam neque recusandae commodi esse, explicabo, quia atque voluptatem laboriosam. Modi eius architecto, neque atque, quas eum, eligendi officiis reprehenderit ex illo saepe nobis. Ipsa quis, molestias eaque atque fuga mollitia soluta sapiente sit aspernatur fugiat labore, quae rerum quaerat voluptates nesciunt cupiditate nisi dicta cumque quia quidem nihil temporibus delectus quo suscipit. Placeat vitae voluptatem inventore, molestiae quis quaerat nobis doloribus reiciendis ut esse omnis expedita officiis, cumque, voluptates nostrum libero minus! Consequatur fugiat id dolor quae doloremque est esse beatae, totam accusantium ratione fuga. Provident, magnam reprehenderit! Autem numquam aliquid vitae quae?</p></div>
+                <div id="post8" class="bpm-article-item"><h2>Post 8 Title</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nemo porro eum error, molestiae neque enim at excepturi adipisci. Quam possimus dolore quod quo esse recusandae cumque! Quod architecto nulla deserunt eum tempora libero dolores. Assumenda ab rerum nobis quia dolor ad praesentium dolorem aspernatur, minus nostrum, temporibus tempora esse non adipisci fuga et dignissimos saepe nemo dolores iure? Unde eum blanditiis maxime molestias. Id provident nam vel cumque aperiam. Ea sunt repudiandae eaque ad laboriosam velit tenetur optio assumenda, sapiente tempora quasi voluptatum deserunt facilis. Autem debitis expedita nostrum facilis quis exercitationem odit optio. Itaque et veritatis animi a, aspernatur debitis? Obcaecati, qui at consequatur veniam neque recusandae commodi esse, explicabo, quia atque voluptatem laboriosam. Modi eius architecto, neque atque, quas eum, eligendi officiis reprehenderit ex illo saepe nobis. Ipsa quis, molestias eaque atque fuga mollitia soluta sapiente sit aspernatur fugiat labore, quae rerum quaerat voluptates nesciunt cupiditate nisi dicta cumque quia quidem nihil temporibus delectus quo suscipit. Placeat vitae voluptatem inventore, molestiae quis quaerat nobis doloribus reiciendis ut esse omnis expedita officiis, cumque, voluptates nostrum libero minus! Consequatur fugiat id dolor quae doloremque est esse beatae, totam accusantium ratione fuga. Provident, magnam reprehenderit! Autem numquam aliquid vitae quae?</p></div>
+                <div id="post9" class="bpm-article-item"><h2>Post 9 Title</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nemo porro eum error, molestiae neque enim at excepturi adipisci. Quam possimus dolore quod quo esse recusandae cumque! Quod architecto nulla deserunt eum tempora libero dolores. Assumenda ab rerum nobis quia dolor ad praesentium dolorem aspernatur, minus nostrum, temporibus tempora esse non adipisci fuga et dignissimos saepe nemo dolores iure? Unde eum blanditiis maxime molestias. Id provident nam vel cumque aperiam. Ea sunt repudiandae eaque ad laboriosam velit tenetur optio assumenda, sapiente tempora quasi voluptatum deserunt facilis. Autem debitis expedita nostrum facilis quis exercitationem odit optio. Itaque et veritatis animi a, aspernatur debitis? Obcaecati, qui at consequatur veniam neque recusandae commodi esse, explicabo, quia atque voluptatem laboriosam. Modi eius architecto, neque atque, quas eum, eligendi officiis reprehenderit ex illo saepe nobis. Ipsa quis, molestias eaque atque fuga mollitia soluta sapiente sit aspernatur fugiat labore, quae rerum quaerat voluptates nesciunt cupiditate nisi dicta cumque quia quidem nihil temporibus delectus quo suscipit. Placeat vitae voluptatem inventore, molestiae quis quaerat nobis doloribus reiciendis ut esse omnis expedita officiis, cumque, voluptates nostrum libero minus! Consequatur fugiat id dolor quae doloremque est esse beatae, totam accusantium ratione fuga. Provident, magnam reprehenderit! Autem numquam aliquid vitae quae?</p></div>
+                <div id="post10" class="bpm-article-item"><h2>Post 10 Title</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nemo porro eum error, molestiae neque enim at excepturi adipisci. Quam possimus dolore quod quo esse recusandae cumque! Quod architecto nulla deserunt eum tempora libero dolores. Assumenda ab rerum nobis quia dolor ad praesentium dolorem aspernatur, minus nostrum, temporibus tempora esse non adipisci fuga et dignissimos saepe nemo dolores iure? Unde eum blanditiis maxime molestias. Id provident nam vel cumque aperiam. Ea sunt repudiandae eaque ad laboriosam velit tenetur optio assumenda, sapiente tempora quasi voluptatum deserunt facilis. Autem debitis expedita nostrum facilis quis exercitationem odit optio. Itaque et veritatis animi a, aspernatur debitis? Obcaecati, qui at consequatur veniam neque recusandae commodi esse, explicabo, quia atque voluptatem laboriosam. Modi eius architecto, neque atque, quas eum, eligendi officiis reprehenderit ex illo saepe nobis. Ipsa quis, molestias eaque atque fuga mollitia soluta sapiente sit aspernatur fugiat labore, quae rerum quaerat voluptates nesciunt cupiditate nisi dicta cumque quia quidem nihil temporibus delectus quo suscipit. Placeat vitae voluptatem inventore, molestiae quis quaerat nobis doloribus reiciendis ut esse omnis expedita officiis, cumque, voluptates nostrum libero minus! Consequatur fugiat id dolor quae doloremque est esse beatae, totam accusantium ratione fuga. Provident, magnam reprehenderit! Autem numquam aliquid vitae quae?.</p></div>
+            </div>
+            <!-- articles -->
+
+            <!-- table of articles -->
+            <div class="col-md-4 d-none d-xl-block">
+                <div class="bpm-toc-container sticky-top">
+                    <nav id="toc" class="nav flex-column">
+                        <a class="bpm-toc-link" href="#post1">Post 1</a>
+                        <a class="bpm-toc-link" href="#post2">Post 2</a>
+                        <a class="bpm-toc-link" href="#post3">Post 3</a>
+                        <a class="bpm-toc-link" href="#post4">Post 4</a>
+                        <a class="bpm-toc-link" href="#post5">Post 5</a>
+                        <a class="bpm-toc-link" href="#post6">Post 6</a>
+                        <a class="bpm-toc-link" href="#post7">Post 7</a>
+                        <a class="bpm-toc-link" href="#post8">Post 8</a>
+                        <a class="bpm-toc-link" href="#post9">Post 9</a>
+                        <a class="bpm-toc-link" href="#post10">Post 10</a>
+                    </nav>
+                </div>
+            </div>
+            <!-- table of articles -->
+        
+        <!-- closing of first two div -->
+        </div>
+    </div>
+    
+
+    <!-- js codes -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tocLinks = document.querySelectorAll('.bpm-toc-link');
+            const posts = document.querySelectorAll('.bpm-article-item');
+
+            // Smooth scroll
+            tocLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Highlight active ToC
+            window.addEventListener('scroll', () => {
+                let currentIndex = -1;
+                posts.forEach((post, index) => {
+                    const postTop = post.offsetTop - window.innerHeight / 2;
+                    if (window.scrollY >= postTop) {
+                        currentIndex = index;
+                    }
+                });
+                tocLinks.forEach((link, index) => {
+                    if (index === currentIndex) {
+                        link.classList.add('toc-active');
+                    } else {
+                        link.classList.remove('toc-active');
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+</html>
