@@ -1,0 +1,313 @@
+
+/* banner gallery start */
+.bm-banner-gallery {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-height: 510px;
+    margin: auto;
+}
+.bm-banner-gallery .slide-list {
+    display: flex;
+    gap: 5px !important;
+    font-size: 0;
+    list-style: none;
+    margin-bottom: 5px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    min-width: 100%;
+}
+.bm-banner-gallery .slide-list .slide-item {
+    min-width: 100%;
+    max-height: 500px;
+    width: auto;
+}
+.bm-banner-gallery .slide-list .slide-item img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+.bm-banner-gallery .slide-button {
+    position: absolute;
+    top: 50%;
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 50px;
+    z-index: 5;
+    color: #fff;
+    display: flex;
+    cursor: pointer;
+    font-size: 2.2rem;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: 0.2s;
+}
+.bm-banner-gallery .slide-button:hover {
+    background: #404040;
+}
+.bm-banner-gallery .slide-button#prev-slide {
+    left: 15px;
+}
+.bm-banner-gallery .slide-button#next-slide {
+    right: 15px;
+}
+.bm-banner-gallery .slide-list::-webkit-scrollbar {
+    display: none;
+}
+.bm-banner-gallery .slider-scrollbar {
+    height: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.bm-banner-gallery .slider-scrollbar .scrollbar-track {
+    background: #ccc;
+    width: 100%;
+    height: 5px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    position: relative;
+}
+.bm-banner-gallery .slider-scrollbar:hover .scrollbar-track {
+    height: 5px;
+}
+.bm-banner-gallery .slider-scrollbar .scrollbar-thumb {
+    position: absolute;
+    background: #000;
+    top: 0;
+    bottom: 0;
+    width: 10%;
+    height: 100%;
+    cursor: grab;
+    border-radius: inherit;
+}
+.bm-banner-gallery .slider-scrollbar .scrollbar-thumb:hover {
+    cursor: grabbing;
+    height: 8px;
+    top: -2px;
+}
+.bm-banner-gallery .slider-scrollbar .scrollbar-thumb:active {
+    cursor: grabbing;
+    height: 8px;
+    top: -2px;
+}
+.bm-banner-gallery .slider-scrollbar .scrollbar-thumb::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
+    bottom: -10px;
+}
+
+/* count single page*/
+.bm-banner-gallery .gallery-total-count {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 9 !important;
+    padding: 0 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    border-radius: 20px;
+}
+
+/* modal */
+.modal-alt {
+    position: relative;
+}
+.madal-alt-overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+}
+.bppm-modal-alt-prev-slide,
+.bppm-modal-alt-next-slide {
+    position: absolute;
+    top: 50%;
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+    border: 0;
+    border-radius: 5px;
+    background: #40465f82;
+    color: #fff;
+    transform: translateY(-50%);
+    z-index: 9999;
+    transition: .3s;
+}
+.bppm-modal-alt-prev-slide:hover,
+.bppm-modal-alt-next-slide:hover {
+    background: #40465f;
+
+}
+.bppm-modal-alt-prev-slide {
+    left: 25px;
+}
+.bppm-modal-alt-next-slide {
+    right: 25px;
+}
+.modal-alt {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+}
+.bppm-listing-all-photos-wrapper .modal-alt {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+}
+.fullscreen-image {
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+}
+.fullscreen-image.zoomed-in {
+    transform: scale(1.5);
+}
+.modal-alt .zoom-hint {
+    display: none;
+    position: absolute;
+    text-align: center;
+    left: auto;
+    bottom: 10px;
+    color: gray;
+    z-index: 9999;
+}
+.bm-banner-gallery .close{
+    color: #db3535;
+    position: absolute;
+    top: 55px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #ffffff20;
+    width: 25px;
+    height: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.bm-banner-gallery .close:hover,
+.bppm-listing-all-photos-modal .close:hover {
+    background: #ffffff30;
+}
+/* modal */
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .bm-banner-gallery {
+        max-height: 350px;
+        min-height: 350px;
+    }
+    .bm-banner-gallery .slide-list .slide-item {
+        max-height: 350px;
+        min-height: 350px;
+    }
+    .bm-banner-gallery .slide-button {
+        font-size: 16px;
+        height: 30px;
+        width: 30px;
+    }
+    .bm-banner-gallery .slide-button#next-slide {
+        right: 0;
+    }
+    .bm-banner-gallery .slide-button#prev-slide {
+        left: 0;
+    }
+    .bm-banner-gallery .slide-list {
+        scroll-snap-type: x mandatory;
+    }
+    .bm-banner-gallery .slider-scrollbar .scrollbar-thumb {
+        width: 20%;
+    }
+    .bm-banner-gallery .slider-scrollbar {
+        display: none !important;
+    }
+    .bm-banner-gallery .gallery-total-count {
+        right: 15px;
+        top: 15px;
+        font-size: 20px;
+    }
+    .bm-banner-gallery .close {
+        top: 20px !important;
+        right: 20px !important;
+    }
+}
+/* banner gallery */
+
+
+
+/* main image */
+#single-main-image-background {
+    min-height: 500px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(2px);
+}
+#single-main-image.main-image {
+    max-height: 500px;
+    width: 100%;
+    max-width: 1250px;
+}
+#single-main-image.main-image img {
+    height: 500px;
+    object-fit: contain;
+}
+#single-main-image {
+    position: absolute;
+    bottom: 0;
+}
+@media screen and (max-width:768px) {
+    #single-main-image-background {
+        min-height: 350px;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: blur(2px);
+    }
+    #single-main-image.main-image {
+        max-height: 350px;
+        min-height: 350px;
+        width: 100%;
+    }
+    #single-main-image.main-image img {
+        height: 350px;
+        object-fit: contain;
+    }
+}
+/* main image end */

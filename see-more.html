@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show More Text</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .more-text {
+            display: none;
+        }
+        .show-more {
+            color: blue;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="text-container">
+    <p class="full-text">Life is like a box of chocolates; you never know what you’re gonna get. This famous saying often evokes mixed feelings—joy and nostalgia. In the story, the protagonist faces challenges symbolized by dashes—“Life is full of ups and downs.” Among the themes are love and loss, accentuated by poignant moments: “I’ll always cherish our time together.” Each character’s journey is marked by currency symbols of worth—€100 worth of dreams—and non-breaking spaces in their relationships, reminding us of the complexities of human connection. (Imagine this as a long paragraph)</p>
+</div>
+
+<script>
+$(document).ready(function() {
+    const fullText = $(".full-text").text();
+    const words = fullText.split(" ");
+    
+    if (words.length > 50) {
+        const previewText = words.slice(0, 50).join(" ");
+        
+        $(".text-container").html(`
+            <p class="preview-text">${previewText}...</p>
+            <span class="show-more">Show More</span>
+            <p class="more-text">${fullText}</p>
+        `);
+        
+        $(".show-more").click(function() {
+            $(".preview-text, .show-more").hide();
+            $(".more-text").show();
+        });
+    }
+});
+</script>
+
+</body>
+</html>
