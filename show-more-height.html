@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expandable Content - Multiple Containers</title>
+    <style>
+        .bm-large-content {
+            max-height: 300px;
+            overflow: hidden;
+            position: relative;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .with-shadow::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to bottom, #ffffff99, #fff);
+            pointer-events: none;
+        }
+
+        .bm-blue-button {
+            display: block;
+            margin: 10px auto 0;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .bm-blue-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="bm-large-content">
+    Content for the first container. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec ex id libero fermentum congue. Praesent ut erat eget lorem gravida sodales. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae labore alias eius laborum saepe maxime, modi natus, iusto ipsum voluptatum in esse doloribus nesciunt perspiciatis! Magnam praesentium ab, recusandae quas debitis quia qui, maiores eveniet dolor distinctio nesciunt sunt ipsum nihil voluptatibus. Mollitia asperiores numquam doloribus dolor modi quis iure est, hic iusto repellat provident fugit omnis minus? Vitae perspiciatis iure recusandae iusto asperiores possimus ipsum dicta, suscipit, perferendis impedit aliquid voluptates, necessitatibus veritatis nulla totam tempore exercitationem illo nostrum commodi dolorum est accusantium? Sunt veritatis labore rem. Animi veritatis, ab officia eaque libero distinctio, nihil quisquam illum itaque rerum, eius repellat quas explicabo consectetur? Dicta dolorem beatae eveniet pariatur quasi sequi numquam a perspiciatis labore deleniti suscipit maxime accusantium exercitationem quo, nobis error eaque ea rem iusto delectus quidem dolor. Dolores nulla eos, consequuntur incidunt laudantium nostrum, sapiente, sequi obcaecati officiis labore tempore ipsa reprehenderit? Accusantium autem beatae consequatur delectus molestias? Inventore deleniti magnam ducimus praesentium, distinctio illum, earum asperiores eos, debitis hic in excepturi iusto officia labore. Molestiae provident nemo distinctio. Quo nam repudiandae maiores accusantium similique? Perferendis, nam tempora? Aliquam expedita sequi impedit tempore modi nemo, voluptatum repellat commodi perferendis libero quaerat corporis voluptas minus. Sed, autem ducimus. Fuga aliquid animi cumque accusamus atque temporibus facere minima rerum! Assumenda earum quibusdam velit id praesentium asperiores. In, iure dolorem ad saepe nemo reprehenderit optio aspernatur earum unde enim quibusdam voluptatem recusandae iste quae doloremque reiciendis magni, cum itaque. Dolor quis adipisci iste, vel quia voluptates. Necessitatibus dicta pariatur blanditiis repellat quos corrupti ipsa iste inventore neque officiis voluptatibus odio quae quasi cumque dolorem temporibus maiores, natus hic doloribus eveniet aperiam accusamus. Dicta, voluptate. Facere, eveniet tempora. Dolorum dolorem aut rem ullam porro reprehenderit praesentium. Minima, fuga minus reprehenderit qui aspernatur est blanditiis reiciendis ad assumenda nostrum architecto maiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis optio obcaecati recusandae. Ratione nam placeat enim maiores magnam eaque minima. Eius vel sunt sint nostrum, voluptate fugiat dolorem nulla blanditiis! Nam corporis molestiae repellat dolore suscipit fuga, numquam quia eum, tempora assumenda alias mollitia tenetur velit? Modi atque magnam magni cum pariatur saepe voluptatem dolores iusto qui voluptate, nulla in ad temporibus veniam excepturi quis officiis! Neque ullam corporis nostrum beatae soluta porro, necessitatibus quod consequuntur non! Fuga labore quia odio ratione, eligendi commodi laboriosam optio quas voluptates non inventore recusandae unde maiores quam delectus quasi beatae esse hic sunt tempora numquam quod nulla quo. Repellendus soluta, reprehenderit iusto veritatis earum neque laboriosam repellat ab magni sed, sint consectetur modi ex. Mollitia, qui. Minus cumque magnam expedita, eos assumenda est earum id maxime debitis nostrum consequatur dolores ullam aliquam facilis eligendi repellat et, dolor aliquid nemo reiciendis excepturi? Eaque et necessitatibus quia. Ratione fuga, dicta ullam sed perferendis voluptates obcaecati itaque repellendus animi officiis commodi illo, laborum id iusto expedita provident corrupti atque, distinctio et sapiente! Quia commodi corporis aliquam adipisci? Velit incidunt ipsum aspernatur explicabo, inventore voluptates. Unde iusto rem maxime labore in laboriosam odio rerum eum ipsa illo!
+</div>
+
+<div class="bm-large-content">
+    Content for the second container. Aenean euismod velit in lorem tincidunt, nec volutpat sem ultricies. Fusce nec est vitae erat gravida scelerisque vel sed quam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae labore alias eius laborum saepe maxime, modi natus, iusto ipsum voluptatum in esse doloribus nesciunt perspiciatis! Magnam praesentium ab, recusandae quas debitis quia qui, maiores eveniet dolor distinctio nesciunt sunt ipsum nihil voluptatibus. Mollitia asperiores numquam doloribus dolor modi quis iure est, hic iusto repellat provident fugit omnis minus? Vitae perspiciatis iure recusandae iusto asperiores possimus ipsum dicta, suscipit, perferendis impedit aliquid voluptates, necessitatibus veritatis nulla totam tempore exercitationem illo nostrum commodi dolorum est accusantium? Sunt veritatis labore rem. Animi veritatis, ab officia eaque libero distinctio, nihil quisquam illum itaque rerum, eius repellat quas explicabo consectetur? Dicta dolorem beatae eveniet pariatur quasi sequi numquam a perspiciatis labore deleniti suscipit maxime accusantium exercitationem quo, nobis error eaque ea rem iusto delectus quidem dolor. Dolores nulla eos, consequuntur incidunt laudantium nostrum, sapiente, sequi obcaecati officiis labore tempore ipsa reprehenderit? Accusantium autem beatae consequatur delectus molestias? Inventore deleniti magnam ducimus praesentium, distinctio illum, earum asperiores eos, debitis hic in excepturi iusto officia labore. Molestiae provident nemo distinctio. Quo nam repudiandae maiores accusantium similique? Perferendis, nam tempora? Aliquam expedita sequi impedit tempore modi nemo, voluptatum repellat commodi perferendis libero quaerat corporis voluptas minus. Sed, autem ducimus. Fuga aliquid animi cumque accusamus atque temporibus facere minima rerum! Assumenda earum quibusdam velit id praesentium asperiores. In, iure dolorem ad saepe nemo reprehenderit optio aspernatur earum unde enim quibusdam voluptatem recusandae iste quae doloremque reiciendis magni, cum itaque. Dolor quis adipisci iste, vel quia voluptates. Necessitatibus dicta pariatur blanditiis repellat quos corrupti ipsa iste inventore neque officiis voluptatibus odio quae quasi cumque dolorem temporibus maiores, natus hic doloribus eveniet aperiam accusamus. Dicta, voluptate. Facere, eveniet tempora. Dolorum dolorem aut rem ullam porro reprehenderit praesentium. Minima, fuga minus reprehenderit qui aspernatur est blanditiis reiciendis ad assumenda nostrum architecto maiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis optio obcaecati recusandae. Ratione nam placeat enim maiores magnam eaque minima. Eius vel sunt sint nostrum, voluptate fugiat dolorem nulla blanditiis! Nam corporis molestiae repellat dolore suscipit fuga, numquam quia eum, tempora assumenda alias mollitia tenetur velit? Modi atque magnam magni cum pariatur saepe voluptatem dolores iusto qui voluptate, nulla in ad temporibus veniam excepturi quis officiis! Neque ullam corporis nostrum beatae soluta porro, necessitatibus quod consequuntur non! Fuga labore quia odio ratione, eligendi commodi laboriosam optio quas voluptates non inventore recusandae unde maiores quam delectus quasi beatae esse hic sunt tempora numquam quod nulla quo. Repellendus soluta, reprehenderit iusto veritatis earum neque laboriosam repellat ab magni sed, sint consectetur modi ex. Mollitia, qui. Minus cumque magnam expedita, eos assumenda est earum id maxime debitis nostrum consequatur dolores ullam aliquam facilis eligendi repellat et, dolor aliquid nemo reiciendis excepturi? Eaque et necessitatibus quia. Ratione fuga, dicta ullam sed perferendis voluptates obcaecati itaque repellendus animi officiis commodi illo, laborum id iusto expedita provident corrupti atque, distinctio et sapiente! Quia commodi corporis aliquam adipisci? Velit incidunt ipsum aspernatur explicabo, inventore voluptates. Unde iusto rem maxime labore in laboriosam odio rerum eum ipsa illo!
+</div>
+
+<div class="bm-large-content">
+    Content for the third container. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi tincidunt, eros ut suscipit viverra, lorem tortor suscipit tortor. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae labore alias eius laborum saepe maxime, modi natus, iusto ipsum voluptatum in esse doloribus nesciunt perspiciatis! Magnam praesentium ab, recusandae quas debitis quia qui, maiores eveniet dolor distinctio nesciunt sunt ipsum nihil voluptatibus. Mollitia asperiores numquam doloribus dolor modi quis iure est, hic iusto repellat provident fugit omnis minus? Vitae perspiciatis iure recusandae iusto asperiores possimus ipsum dicta, suscipit, perferendis impedit aliquid voluptates, necessitatibus veritatis nulla totam tempore exercitationem illo nostrum commodi dolorum est accusantium? Sunt veritatis labore rem. Animi veritatis, ab officia eaque libero distinctio, nihil quisquam illum itaque rerum, eius repellat quas explicabo consectetur? Dicta dolorem beatae eveniet pariatur quasi sequi numquam a perspiciatis labore deleniti suscipit maxime accusantium exercitationem quo, nobis error eaque ea rem iusto delectus quidem dolor. Dolores nulla eos, consequuntur incidunt laudantium nostrum, sapiente, sequi obcaecati officiis labore tempore ipsa reprehenderit? Accusantium autem beatae consequatur delectus molestias? Inventore deleniti magnam ducimus praesentium, distinctio illum, earum asperiores eos, debitis hic in excepturi iusto officia labore. Molestiae provident nemo distinctio. Quo nam repudiandae maiores accusantium similique? Perferendis, nam tempora? Aliquam expedita sequi impedit tempore modi nemo, voluptatum repellat commodi perferendis libero quaerat corporis voluptas minus. Sed, autem ducimus. Fuga aliquid animi cumque accusamus atque temporibus facere minima rerum! Assumenda earum quibusdam velit id praesentium asperiores. In, iure dolorem ad saepe nemo reprehenderit optio aspernatur earum unde enim quibusdam voluptatem recusandae iste quae doloremque reiciendis magni, cum itaque. Dolor quis adipisci iste, vel quia voluptates. Necessitatibus dicta pariatur blanditiis repellat quos corrupti ipsa iste inventore neque officiis voluptatibus odio quae quasi cumque dolorem temporibus maiores, natus hic doloribus eveniet aperiam accusamus. Dicta, voluptate. Facere, eveniet tempora. Dolorum dolorem aut rem ullam porro reprehenderit praesentium. Minima, fuga minus reprehenderit qui aspernatur est blanditiis reiciendis ad assumenda nostrum architecto maiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis optio obcaecati recusandae. Ratione nam placeat enim maiores magnam eaque minima. Eius vel sunt sint nostrum, voluptate fugiat dolorem nulla blanditiis! Nam corporis molestiae repellat dolore suscipit fuga, numquam quia eum, tempora assumenda alias mollitia tenetur velit? Modi atque magnam magni cum pariatur saepe voluptatem dolores iusto qui voluptate, nulla in ad temporibus veniam excepturi quis officiis! Neque ullam corporis nostrum beatae soluta porro, necessitatibus quod consequuntur non! Fuga labore quia odio ratione, eligendi commodi laboriosam optio quas voluptates non inventore recusandae unde maiores quam delectus quasi beatae esse hic sunt tempora numquam quod nulla quo. Repellendus soluta, reprehenderit iusto veritatis earum neque laboriosam repellat ab magni sed, sint consectetur modi ex. Mollitia, qui. Minus cumque magnam expedita, eos assumenda est earum id maxime debitis nostrum consequatur dolores ullam aliquam facilis eligendi repellat et, dolor aliquid nemo reiciendis excepturi? Eaque et necessitatibus quia. Ratione fuga, dicta ullam sed perferendis voluptates obcaecati itaque repellendus animi officiis commodi illo, laborum id iusto expedita provident corrupti atque, distinctio et sapiente! Quia commodi corporis aliquam adipisci? Velit incidunt ipsum aspernatur explicabo, inventore voluptates. Unde iusto rem maxime labore in laboriosam odio rerum eum ipsa illo!
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    jQuery(document).ready(function($) {
+        $('.bm-large-content').each(function() {
+            const container = $(this);
+            const originalHeight = container.prop('scrollHeight'); // Get full height of this container
+
+            if (originalHeight > 300) {
+                container.addClass('with-shadow'); // Add shadow class
+                // Add the "See More" button dynamically
+                const btn = $('<button class="bm-blue-button">See More</button>');
+                container.after(btn);
+
+                // Handle click events for expanding and collapsing
+                btn.on('click', function() {
+                    if (container.css('max-height') === '300px') {
+                        container.css('max-height', originalHeight + 'px'); // Expand
+                        $(this).text('See Less');
+                    } else {
+                        container.addClass('with-shadow'); // remove shadow class
+                        container.css('max-height', '300px'); // Collapse
+                        $(this).text('See More');
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
