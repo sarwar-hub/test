@@ -20,9 +20,9 @@
     text: 'Hello World',
     url: 'https://your_site_url',
     }
-    const shareVia = window.navigator.share(data);
+    //const shareVia = window.navigator.share(data);
     </script>
-    <button onclick={shareVia}>click 2</button>
+    <button onclick="window.navigator.share(data);">share on</button>
 
 <!-- <script>
     onShare() {
