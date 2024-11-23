@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.facebook.com/dialog/share?
+    app_id=145634995501895
+    &display=popup
+    &href=test-url
+    &redirect_uri=RETURN_URL">click 2</a>
+
+    
+
+    <script>
+
+    const shareVia = window.navigator.share('test-link');
+
+    onShare() {
+    console.log(order);
+    const title = 'Title';
+    const url = 'https://www.facebook.com/';
+    const text = "Share on native app if installed";
+    if (navigator.share) {
+      navigator
+        .share({ title: `${title}`, url: `${url}`,text: `${text}`})
+        .then(() => {
+          console.log('Thanks for sharing!');
+        })
+        .catch(console.error);
+    } else {
+      window.location.replace(
+        `https://www.facebook.com/sharer.php?u=${url.trim()}&quote=${text}`
+      );
+    }
+  } //onShare ends here
+    </script>
+
+    <button onclick={shareVia}>click 2</button>
+    <button onclick="onShare()">click 3</button>
+
+</body>
+</html>
