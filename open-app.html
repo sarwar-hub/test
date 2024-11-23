@@ -15,8 +15,12 @@
     
 
     <script>
-
-    const shareVia = window.navigator.share('test-link');
+    const data = {
+    title: document.title,
+    text: 'Hello World',
+    url: 'https://your_site_url',
+    }
+    const shareVia = window.navigator.share(data);
     </script>
     <button onclick={shareVia}>click 2</button>
 
