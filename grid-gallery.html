@@ -172,6 +172,8 @@
         }
     }
 
+
+    /* modal override - bootstrap */
     #bmVerticalModal .modal-header {
         position: sticky;
         top: 0;
@@ -187,7 +189,7 @@
 </style>
 <body>
     
-<div class="bm-grid-gallery" style="margin: 10px 0;">
+<div class="bm-grid-gallery">
 
     <!-- previous button -->
     <button id="prev-slide" class="slide-button">
@@ -212,22 +214,8 @@
             <a data-toggle="modal" data-target="#bmVerticalModal"><img src="https://images.unsplash.com/photo-1720048169707-a32d6dfca0b3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Image 1"></a>
         </div>
-        <div class="slide-item">
-            <a data-toggle="modal" data-target="#bmVerticalModal"><img src="https://images.unsplash.com/photo-1719937206158-cad5e6775044?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Image 1"></a>
-            <a data-toggle="modal" data-target="#bmVerticalModal"><img src="https://images.unsplash.com/photo-1719937051058-63705ed35502?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Image 1"></a>
-            <a data-toggle="modal" data-target="#bmVerticalModal"><img src="https://images.unsplash.com/photo-1720048169707-a32d6dfca0b3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Image 1"></a>
-        </div>
-        <div class="slide-item">
-            <a data-toggle="modal" data-target="#bmVerticalModal"><img src="https://images.unsplash.com/photo-1719937206158-cad5e6775044?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Image 1"></a>
-            <a data-toggle="modal" data-target="#bmVerticalModal"><img src="https://images.unsplash.com/photo-1719937051058-63705ed35502?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Image 1"></a>
-            <a data-toggle="modal" data-target="#bmVerticalModal"><img src="https://images.unsplash.com/photo-1720048169707-a32d6dfca0b3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Image 1"></a>
-        </div>
+
+       
     </div>
 
     <!-- total image count -->
@@ -238,7 +226,7 @@
         <i class="fas fa-chevron-right"></i>
     </button>
     
-    <!-- Vertical Modal -->
+    <!-- Vertical Modal (boostrap) -->
     <div class="modal fade" id="bmVerticalModal" tabindex="-1" role="dialog" aria-labelledby="bm-vertical-modal" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -258,7 +246,7 @@
         </div>
     </div>
     <!-- Vertical Modal -->
-
+</div> <!--- parent closing -->
 
 
 
@@ -267,227 +255,88 @@
 
 
     <script>
-        $(document).ready(function () {
-            // Append all images to the modal body
-            let image_appended = false;
-            $('.bm-grid-gallery').on('click', function () {
-                if(image_appended) return;
+    $(document).ready(function () {
 
-                const grid_images = $('.bm-grid-gallery img').map(function () {
-                    return `<img src="${$(this).attr('src')}" alt="${$(this).attr('alt')}" style="width:100%; margin-bottom:10px;">`;
-                }).get().join('');
-                $('#bmVerticalModal .modal-body').html(grid_images); // Append images to modal body
-                image_appended = true;
-            });
-        });
+        // handle gallery
+        const bmg_galleryExists = $(".bm-grid-gallery");
 
-        document.addEventListener('DOMContentLoaded', function () {
+        const bmg_initSlider = () => {
+            if (bmg_galleryExists) {
+                const bmg_imageList = $(".bm-grid-gallery .slide-list");
+                const bmg_slideButtons = $(".bm-grid-gallery .slide-button");
 
-            // banner gallery start
-            const isGdSinglePage = true; //document.querySelector('.single.geodir-page-single');
-            const bannerGallery = true;//document.querySelector(".bm-grid-gallery");
-            const bm_initSlider = () => {
-                if (bannerGallery !== null) {
-                    const bm_imageList = document.querySelector(".bm-grid-gallery .slide-list");
-                    const bm_slideButtons = document.querySelectorAll(".bm-grid-gallery .slide-button");
+                const bmg_maxScrollLeft = bmg_imageList[0].scrollWidth - bmg_imageList[0].clientWidth;
 
-                    const bm_maxScrollLeft = bm_imageList.scrollWidth - bm_imageList.clientWidth;
+                // Drag-to-Scroll Implementation
+                let bmg_isDragging = false;
+                let bmg_startX;
+                let bmg_scrollLeft;
 
-                    // Drag-to-Scroll Implementation
-                    let bm_isDragging = false;
-                    let bm_startX;
-                    let bm_scrollLeft;
+                bmg_imageList.on("mousedown", function (e) {
+                    e.preventDefault();
+                    bmg_isDragging = true;
+                    bmg_imageList.addClass("active");
+                    bmg_startX = e.pageX - bmg_imageList.offset().left;
+                    bmg_scrollLeft = bmg_imageList.scrollLeft();
+                });
 
-                    bm_imageList.addEventListener("mousedown", (e) => {
-                        e.preventDefault();
-                        bm_isDragging = true;
-                        bm_imageList.classList.add("active");
-                        bm_startX = e.pageX - bm_imageList.offsetLeft;
-                        bm_scrollLeft = bm_imageList.scrollLeft;
-                    });
+                bmg_imageList.on("mouseleave mouseup", function () {
+                    bmg_isDragging = false;
+                    bmg_imageList.removeClass("active");
+                });
 
-                    bm_imageList.addEventListener("mouseleave", () => {
-                        bm_isDragging = false;
-                        bm_imageList.classList.remove("active");
-                    });
+                bmg_imageList.on("mousemove", function (e) {
+                    if (!bmg_isDragging) return;
+                    e.preventDefault();
+                    const bmg_x = e.pageX - bmg_imageList.offset().left;
+                    const bmg_walk = (bmg_x - bmg_startX) * 2;
+                    bmg_imageList.scrollLeft(bmg_scrollLeft - bmg_walk);
+                });
 
-                    bm_imageList.addEventListener("mouseup", () => {
-                        bm_isDragging = false;
-                        bm_imageList.classList.remove("active");
-                    });
 
-                    bm_imageList.addEventListener("mousemove", (e) => {
-                        if (!bm_isDragging) return;
-                        e.preventDefault();
-                        const bm_x = e.pageX - bm_imageList.offsetLeft;
-                        const bm_walk = (bm_x - bm_startX) * 2;
-                        bm_imageList.scrollLeft = bm_scrollLeft - bm_walk;
-                    });
+                // Slide images on button click
+                bmg_slideButtons.on("click", function (e) {
+                    e.preventDefault();
+                    const bmg_direction = $(this).attr("id") === "prev-slide" ? -1 : 1;
+                    const bmg_scrollAmount = bmg_imageList[0].clientWidth/2 * bmg_direction;
+                    bmg_imageList.animate({ scrollLeft: bmg_imageList.scrollLeft() + bmg_scrollAmount }, 300);
+                });
 
-                    // Slide images according to the slide button clicks
-                    bm_slideButtons.forEach(button => {
-                        button.addEventListener("click", (e) => {
-                            e.preventDefault();
 
-                            const bm_direction = button.id === "prev-slide" ? -1 : 1;
-                            const bm_scrollAmount = bm_imageList.clientWidth * bm_direction;
-                            bm_imageList.scrollBy({ left: bm_scrollAmount, behavior: "smooth" });
-                        });
-                    });
+                // Show or hide slide buttons based on scroll position
+                const bmg_handleSlideButtons = () => {
+                    bmg_slideButtons.eq(0).toggle(bmg_imageList.scrollLeft() > 0);
+                    bmg_slideButtons.eq(1).toggle(bmg_imageList.scrollLeft() < bmg_maxScrollLeft);
+                };
 
-                    // Show or hide slide buttons based on scroll position
-                    const bm_handleSlideButtons = () => {
-                        bm_slideButtons[0].style.display = bm_imageList.scrollLeft <= 0 ? "none" : "flex";
-                        bm_slideButtons[1].style.display = bm_imageList.scrollLeft >= bm_maxScrollLeft ? "none" : "flex";
-                    }
+                bmg_imageList.on("scroll", bmg_handleSlideButtons);
 
-                    // Call these two functions when image list scrolls
-                    bm_imageList.addEventListener("scroll", (e) => {
-
-                        bm_handleSlideButtons();
-                    });
-
-                }
+                bmg_handleSlideButtons(); // Initial call to set button visibility
             }
+        };
 
-            if (isGdSinglePage !== null) {
-                bm_initSlider();
-                window.addEventListener("resize", bm_initSlider);
-                window.addEventListener("load", bm_initSlider);
-            }
+        // call gallery
+        if (bmg_galleryExists) {
+            bmg_initSlider();
+            $(window).on("resize load", bmg_initSlider);
+        }
 
-            // const bm_initModal = () => {
-            //     // JavaScript to handle image click and display in full screen (modal)
-            //     const bm_modalImages = document.querySelectorAll('.bm-grid-gallery .slide-item .image-item');
-            //     const bm_fullscreenOverlay = document.querySelector('.bm-grid-gallery .modal-alt');
-            //     const bm_fullscreenImage = document.querySelector('.bm-grid-gallery .fullscreen-image');
-            //     const bm_modalPrev = document.querySelector('.bm-grid-gallery .bppm-modal-alt-prev-slide');
-            //     const bm_modalNext = document.querySelector('.bm-grid-gallery .bppm-modal-alt-next-slide');
-
-            //     let bm_modalAltIndex = 0;
-            //     bm_modalImages.forEach((image, i) => {
-            //         image.addEventListener('click', function () {
-            //             // fullscreenImage.src = this.src;
-            //             bm_updateModalImage(i)
-            //             bm_fullscreenOverlay.style.display = 'block';
-            //             bm_fullscreenOverlay.style.display = 'flex';
-            //             bm_fullscreenOverlay.style.alignItems = 'center';
-            //             bm_fullscreenOverlay.style.justifyContent = 'center';
-            //         });
-            //     });
-            //     const bm_updateModalImage = (i) => {
-            //         bm_fullscreenImage.src = bm_modalImages[i].src;
-            //         bm_modalAltIndex = i;
-            //     }
-            //     if (bm_modalPrev) {
-            //         bm_modalPrev.addEventListener('click', function () {
-            //             if (bm_modalAltIndex > 0) {
-            //                 bm_updateModalImage(bm_modalAltIndex - 1);
-            //             }
-            //             else {
-            //                 bm_updateModalImage(bm_modalImages.length - 1);
-            //             }
-            //         });
-            //     }
-            //     if (bm_modalNext) {
-            //         bm_modalNext.addEventListener('click', function () {
-            //             if (bm_modalAltIndex < bm_modalImages.length - 1) {
-            //                 bm_updateModalImage(bm_modalAltIndex + 1);
-            //             }
-            //             else {
-            //                 bm_updateModalImage(0);
-            //             }
-            //         });
-            //     }
-
-
-            //     // touch events for touch-based sliding
-            //     if (bm_fullscreenImage !== null) {
-            //         bm_fullscreenImage.addEventListener('touchstart', (event) => {
-            //             bm_altTouchStartX = event.touches[0].clientX;
-            //             event.preventDefault();
-            //         });
-
-            //         bm_fullscreenImage.addEventListener('touchmove', (event) => {
-            //             // Prevent default touchmove behavior to avoid scrolling
-            //             event.preventDefault();
-            //         });
-
-            //         bm_fullscreenImage.addEventListener('touchend', (event) => {
-            //             bm_altTouchEndX = event.changedTouches[0].clientX;
-            //             bm_handleModalGesture();
-            //             event.preventDefault();
-            //         });
-
-            //         function bm_handleModalGesture() {
-
-            //             if (bm_altTouchEndX < bm_altTouchStartX - 20) {
-            //                 if (bm_modalAltIndex < bm_modalImages.length - 1) {
-            //                     bm_updateModalImage(bm_modalAltIndex + 1);
-            //                 }
-            //                 else {
-            //                     bm_updateModalImage(0);
-            //                 }
-            //             } else if (bm_altTouchEndX > bm_altTouchStartX + 20) {
-            //                 if (bm_modalAltIndex > 0) {
-            //                     bm_updateModalImage(bm_modalAltIndex - 1);
-            //                 }
-            //                 else {
-            //                     bm_updateModalImage(bm_modalImages.length - 1);
-            //                 }
-            //             }
-            //         }
-
-
-            //         // zoom modal image on click
-            //         let bm_lastClickTime = 0;
-            //         function bm_handleClickOrTouch(event) {
-            //             const bm_currentTime = new Date().getTime();
-            //             const bm_clickTimeDif = bm_currentTime - bm_lastClickTime;
-            //             bm_lastClickTime = bm_currentTime;
-
-            //             if (bm_clickTimeDif <= 300) {
-            //                 this.classList.toggle('zoomed-in');
-            //             }
-            //         }
-
-            //         bm_fullscreenImage.addEventListener('click', bm_handleClickOrTouch);
-
-            //         bm_fullscreenImage.addEventListener('touchstart', function (event) {
-            //             event.preventDefault();
-            //             bm_handleClickOrTouch.call(this, event);
-            //         });
-            //         bm_fullscreenImage.addEventListener('touchend', function (event) {
-            //             event.preventDefault();
-            //         });
-
-
-            //         // Close the full-screen overlay when the close button is clicked
-            //         const bm_closeBtn = document.querySelector('.bm-grid-gallery .modal-alt .close');
-            //         const bm_modalOverlay = document.querySelector('.bm-grid-gallery .modal-alt .madal-alt-overlay');
-            //         bm_closeBtn.addEventListener('click', function () {
-            //             bm_fullscreenOverlay.style.display = 'none';
-            //         });
-            //         bm_modalOverlay.addEventListener('click', function () {
-            //             bm_fullscreenOverlay.style.display = 'none';
-            //         });
-            //     }
-            // } // modal closer
-
-            // if (isGdSinglePage) {
-            //     bm_initModal();
-            // }
-            // banner gallery end
-
+        // handle modal
+        let image_appended = false;
+        $('.bm-grid-gallery').on('click', function () {
+            if(image_appended) return;
+            
+            const grid_images = $('.bm-grid-gallery img').map(function () {
+                return `<img src="${$(this).attr('src')}" alt="${$(this).attr('alt')}" style="width:100%; margin-bottom:10px;">`;
+            }).get().join('');
+            $('#bmVerticalModal .modal-body').html(grid_images); // Append images to modal body
+            image_appended = true;
         });
 
 
-
-
-
-
+    });
     </script>
-</div>
+
 
 
 </body>
