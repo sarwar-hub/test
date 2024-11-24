@@ -14,6 +14,11 @@
 
     
 
+
+
+
+
+
     <script>
     const data = {
     title: document.title,
@@ -26,7 +31,14 @@
 
 
 
-      <!-- Load Facebook SDK -->
+
+
+
+
+
+
+
+<!-- Load Facebook SDK -->
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" 
         src="https://connect.facebook.net/en_US/sdk.js"></script>
@@ -54,9 +66,47 @@
     });
   }
 </script>
-
 <!-- Share Button -->
 <button onclick="shareOnFacebook()">Share on Facebook</button>
+
+
+
+
+
+
+
+
+
+<script>
+  document.getElementById('shareBtn').onclick = function() {
+    FB.ui({
+      display: 'popup',
+      method: 'share',
+      href: 'https://developers.facebook.com/docs/',
+    }, function(response){});
+  }
+  </script>
+  <div id="shareBtn" class="btn btn-success clearfix">Share Dialog</div>
+
+
+
+
+
+
+
+
+
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v21.0&appId=732987975671664"></script>
+  <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+
+
+
+
+
+
+
 
 <!-- <script>
     onShare() {
