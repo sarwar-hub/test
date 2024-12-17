@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake pagination</title>
+    <style>
+        .reviews .review {
+            display: none;
+        }
+
+        .reviews .review.active {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="reviews">
+        <p class="review">Review 1</p>
+        <p class="review">Review 2</p>
+        <p class="review">Review 3</p>
+        <p class="review">Review 4</p>
+        <p class="review">Review 5</p>
+        <p class="review">Review 6</p>
+        <p class="review">Review 7</p>
+        <p class="review">Review 8</p>
+        <p class="review">Review 9</p>
+        <p class="review">Review 10</p>
+        <p class="review">Review 11</p>
+        <p class="review">Review 12</p>
+        <p class="review">Review 13</p>
+        <p class="review">Review 14</p>
+        <p class="review">Review 15</p>
+    </div>
+    <div class="pagination">
+        <button class="page-btn" data-page="1">1</button>
+        <button class="page-btn" data-page="2">2</button>
+    </div>
+    
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const reviewsPerPage = 10;
+            const reviews = document.querySelectorAll(".review");
+            const buttons = document.querySelectorAll(".page-btn");
+
+            function showPage(page) {
+                reviews.forEach((review, index) => {
+                    review.classList.remove("active");
+                    if (index >= (page - 1) * reviewsPerPage && index < page * reviewsPerPage) {
+                        review.classList.add("active");
+                    }
+                });
+            }
+
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const page = parseInt(button.getAttribute("data-page"));
+                    showPage(page);
+                });
+            });
+
+            // Show the first page by default
+            showPage(1);
+        });
+
+    </script>
+</body>
+</html>
