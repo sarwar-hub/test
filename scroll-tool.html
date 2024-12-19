@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollable Div with Conditional Handle</title>
+    <style>
+        /* Container for Scrollable Div */
+        .bm-vertical-modal {
+            position: relative;
+            height: 100vh;
+            width: 300px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        /* Content inside the Scrollable Div */
+        .bm-vertical-modal .modal-body {
+            height: 100vh;
+            width: 100%;
+            padding: 10px;
+            background: #f9f9f9;
+            overflow-y: auto;
+
+        }
+
+        /* Draggable Scroll Handle */
+        #bm_scrollHandle {
+            position: absolute;
+            top: 0;
+            right: -30px;
+            /* Initially hidden off-screen */
+            width: 20px;
+            height: 80px;
+            background: #888;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0;
+            display: none;
+            /* Hidden by default */
+            transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        #bm_scrollHandle:hover,
+        #bm_scrollHandle:active {
+            background: #555;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- Scrollable Div with Draggable Handle -->
+    <div class="bm-vertical-modal">
+        <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur itaque dicta officia molestiae
+                labore, iusto nostrum esse sequi, adipisci dolor ex consectetur alias impedit officiis ullam delectus
+                deleniti asperiores vel, tempora aspernatur. Pariatur, eligendi sequi? Distinctio, non. Voluptatibus
+                exercitationem hic perspiciatis eum provident, voluptate porro a at in fuga quaerat nulla odio
+                necessitatibus enim repudiandae vel dolores itaque aspernatur suscipit recusandae omnis dolore totam.
+                Quae voluptatibus magnam excepturi quibusdam architecto libero eum vero sequi culpa perferendis iste
+                dolor minima suscipit possimus incidunt sapiente veritatis rerum laborum nesciunt, omnis commodi
+                reprehenderit exercitationem natus hic? Velit neque voluptatum unde officiis facilis rerum corrupti vel
+                commodi quia at soluta quos expedita, consequatur placeat accusantium delectus maxime tempora id
+                dignissimos earum quam, numquam dolor! Molestiae hic pariatur quibusdam omnis nesciunt esse saepe
+                sapiente eos, optio possimus provident dolores debitis nam nulla nostrum recusandae nemo fugit est
+                cumque perferendis sit et corrupti repellendus! Voluptatum iure, quos fugit quas, saepe aperiam officiis
+                mollitia, eveniet animi rerum amet consequatur voluptates officia libero in veritatis reiciendis
+                architecto voluptas labore vero facilis velit dignissimos optio et? Hic, fugiat. Impedit, dignissimos?
+                Esse assumenda sit placeat molestias voluptate omnis ut commodi in minus maiores enim adipisci vitae
+                eligendi, quod beatae ex iste temporibus consequuntur ipsum laborum sint voluptates aut tempore a?
+                Suscipit harum reiciendis distinctio rerum sunt sapiente. A dolores laborum commodi culpa beatae iure
+                nihil nam minima dicta quam labore nisi accusamus, quasi officia magnam assumenda impedit asperiores ex
+                eos sunt illo rem porro tenetur error. Voluptate iusto a facilis, unde, autem iste quos nihil quas
+                aspernatur ut fuga consequuntur blanditiis, distinctio placeat? Facilis, ullam fuga corrupti deleniti,
+                corporis architecto nam placeat eveniet maiores alias voluptas in quod mollitia quam accusamus ab?
+                Praesentium mollitia, et molestiae ipsa ea modi adipisci voluptatum culpa ullam magni, ratione,
+                temporibus laborum facere vel. Quia impedit placeat error esse? Asperiores magni aspernatur iste.
+                Tempora aperiam ex, quam assumenda cum fugiat quo, sapiente hic dolor quos a illo repellat ullam sit
+                maiores libero nam impedit repellendus! Odio ipsa accusantium blanditiis laborum officia aliquid et
+                voluptatum. Officia dolore doloremque cupiditate quibusdam quidem vitae sapiente nulla reprehenderit
+                ipsam nam sit repudiandae, laudantium nisi. Explicabo saepe maiores inventore! Non deleniti debitis,
+                tempora repellat amet, unde aperiam minus ipsa nihil voluptates laborum neque maiores vero porro aliquid
+                fugiat architecto illo minima impedit fuga voluptatibus ex ea. Unde, vitae cum dicta nisi a quasi maxime
+                repudiandae modi animi ad harum, earum autem ex! Nemo, totam fuga magnam, modi laudantium atque mollitia
+                blanditiis hic nihil sint sit, perferendis aperiam? Delectus rem sed minus voluptatum nostrum dolorem
+                quidem illum illo esse quasi quis dicta unde, ad distinctio voluptates alias perferendis eum impedit
+                libero, laborum harum assumenda, porro explicabo. Quas debitis voluptates quidem dicta voluptatem quos
+                itaque ullam cumque vitae aspernatur molestiae rerum perspiciatis sit magnam minus corporis impedit
+                inventore adipisci quae soluta molestias, provident officiis est. Temporibus velit laboriosam quos
+                ratione sit pariatur, culpa minima hic ut, reprehenderit, deserunt repellat rem fugit officiis tenetur
+                animi explicabo obcaecati ipsa. Tenetur vel numquam voluptate voluptas!</p>
+        </div>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const $bmst_scrollContainer = $('.bm-vertical-modal');
+            const $bmst_scrollContent = $('.bm-vertical-modal .modal-body');
+
+            const bmst_containerHeight = $bmst_scrollContainer.height();
+            const bmst_contentHeight = $bmst_scrollContent[0].scrollHeight;
+            let bmst_isDragging = false;
+            let bmst_startY;
+            let bmst_startScrollTop;
+            let bmst_scrollTimeout;
+
+            // Show the handle only if content height exceeds 1000px
+            if (bmst_contentHeight > 1000) {
+                $bmst_scrollContainer.append('<div id="bm_scrollHandle"></div>'); // add handle
+                const $bmst_scrollHandle = $('#bm_scrollHandle');
+
+                // Adjust handle height dynamically
+                const bmst_handleRatio = bmst_containerHeight / bmst_contentHeight;
+                $bmst_scrollHandle.height(bmst_containerHeight * bmst_handleRatio);
+
+                // Mouse down on the handle
+                $bmst_scrollHandle.on('mousedown', function (e) {
+                    bmst_isDragging = true;
+                    bmst_startY = e.clientY;
+                    bmst_startScrollTop = $bmst_scrollContent.scrollTop();
+                    $('body').css('user-select', 'none'); // Disable text selection
+                });
+
+                // Mouse move for dragging
+                $(document).on('mousemove', function (e) {
+                    if (!bmst_isDragging) return;
+
+                    const bmst_deltaY = e.clientY - bmst_startY;
+                    const bmst_scrollDelta = (bmst_deltaY / bmst_containerHeight) * bmst_contentHeight;
+                    $bmst_scrollContent.scrollTop(bmst_startScrollTop + bmst_scrollDelta);
+
+                    // Update handle position
+                    const bmst_scrollTopRatio = $bmst_scrollContent.scrollTop() / bmst_contentHeight;
+                    $bmst_scrollHandle.css('top', bmst_scrollTopRatio * bmst_containerHeight + 'px');
+                });
+
+                // Mouse up to stop dragging
+                $(document).on('mouseup', function () {
+                    bmst_isDragging = false;
+                    $('body').css('user-select', ''); // Enable text selection
+                });
+
+                // Sync handle position with content scroll
+                $bmst_scrollContent.on('scroll', function () {
+                    const bmst_scrollTopRatio = $bmst_scrollContent.scrollTop() / bmst_contentHeight;
+                    $bmst_scrollHandle.css('top', bmst_scrollTopRatio * bmst_containerHeight + 'px');
+
+                    // Show handle with fade-in effect
+                    $bmst_scrollHandle.css({
+                        opacity: 1,
+                        right: '0px',
+                        display: 'block',
+                    });
+
+                    // Clear any previous timeout and set a new one
+                    clearTimeout(bmst_scrollTimeout);
+                    bmst_scrollTimeout = setTimeout(function () {
+                        if (!$bmst_scrollHandle.is(':hover')) {
+                            // Hide handle with slide-out effect after scrolling stops
+                            $bmst_scrollHandle.css({
+                                right: '-30px',
+                                opacity: 0,
+                            });
+                        }
+                    }, 1500); // Handle hides after 1.5 seconds of no scrolling
+                });
+
+                // Prevent handle from hiding when hovered
+                $bmst_scrollHandle.on('mouseenter', function () {
+                    clearTimeout(bmst_scrollTimeout);
+                    $bmst_scrollHandle.css({
+                        opacity: 1,
+                        right: '0px',
+                    });
+                });
+
+                $bmst_scrollHandle.on('mouseleave', function () {
+                    bmst_scrollTimeout = setTimeout(function () {
+                        $bmst_scrollHandle.css({
+                            right: '-30px',
+                            opacity: 0,
+                        });
+                    }, 1000);
+                });
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
