@@ -227,6 +227,7 @@ $(document).ready(function(){
         interval: false
     });
 
+    // touch slide
     $('#bm-video-popup-carousel').on('touchstart', function(event){
         const xClick = event.originalEvent.touches[0].pageX;
         $(this).one('touchmove', function(event){
@@ -235,15 +236,30 @@ $(document).ready(function(){
 
             if( Math.floor(xClick - xMove) > sensitivityInPx ){
                 $(this).carousel('next');
+                pauseModalVideo();
             }
             else if( Math.floor(xClick - xMove) < -sensitivityInPx ){
                 $(this).carousel('prev');
+                pauseModalVideo();
             }
         });
         $(this).on('touchend', function(){
             $(this).off('touchmove');
         });
     });
+
+
+    // pause video if clicks on close, next, prev
+    $('.close, .carousel-control').on('click', function(){
+        pauseModalVideo();
+    });
+
+    // pause video function
+    const pauseModalVideo = () => {
+        $("video").each(function () {
+            this.pause(); // Pause each video
+        });
+    };
 
 });
 </script>
